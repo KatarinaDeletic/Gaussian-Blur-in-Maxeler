@@ -1,0 +1,16 @@
+Mon May 04 16:53:57 UTC 2020
+Manager_GaussianBlurDFE
+orig
+Manager_GaussianBlurDFE_orig.dot
+pipelining
+Manager_GaussianBlurDFE_pipelining.dot
+schedstall
+Manager_GaussianBlurDFE_schedstall.dot
+clockwidth
+Manager_GaussianBlurDFE_clockwidth.dot
+dualaspect
+Manager_GaussianBlurDFE_dualaspect.dot
+pullpush
+Manager_GaussianBlurDFE_pullpush.dot
+final
+Manager_GaussianBlurDFE_final.dot

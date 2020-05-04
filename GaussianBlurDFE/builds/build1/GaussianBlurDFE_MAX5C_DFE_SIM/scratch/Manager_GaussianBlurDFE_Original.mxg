@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagerGraph version="2019.2" design_name="Manager_GaussianBlurDFE" compilation_phase="Original" hardwareBuild="false">
+	<Node id="1" instanceName="x" type="Input">
+		<Output clock="PCIE" name="x" type="PUSH 2" width="128">
+			<Stream name="Stream_2" sink="0" />
+		</Output>
+	</Node>
+	<Node id="0" instanceName="GaussianBlurDFEKernel" type="Kernel">
+		<PxgFile phase="original">GaussianBlurDFE-GaussianBlurDFEKernel-original.pxg</PxgFile>
+		<Input clock="STREAM" name="x" type="PULL el=1 ael=2" width="32">
+			<Stream name="Stream_3" source="1" />
+		</Input>
+		<Output clock="STREAM" name="y" type="PUSH 5" width="32">
+			<Stream name="Stream_6" sink="4" />
+		</Output>
+	</Node>
+	<Node id="4" instanceName="y" type="Output">
+		<Input clock="PCIE" name="y" type="PUSH 1" width="128">
+			<Stream name="Stream_5" source="0" />
+		</Input>
+	</Node>
+</ManagerGraph>

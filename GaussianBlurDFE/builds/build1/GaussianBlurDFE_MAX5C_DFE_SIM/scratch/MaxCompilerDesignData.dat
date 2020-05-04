@@ -1,0 +1,1778 @@
+#ifdef MAXCOMPILER_VERSION_INFO
+#define MAXCOMPILER_VERSION_INFO_PRESENT 1
+#define MAXFILE_MAXCOMPILER_VERSION_YEAR         2019
+#define MAXFILE_MAXCOMPILER_VERSION_NUM          2
+#define MAXFILE_MAXCOMPILER_VERSION_POINT        0
+#define MAXFILE_MAXCOMPILER_VERSION_PATCH        ""
+#define MAXFILE_MAXCOMPILER_VERSION_REV          "f5495a7"
+#define MAXFILE_MAXCOMPILER_VERSION_RELEASE_DATE "2019-10-10"
+#define MAXFILE_MAXCOMPILER_VERSION_RELEASE_MODE true
+#endif
+
+#ifdef MAXFILE_BUILD_INFO
+#define MAXFILE_BUILD_INFO_PRESENT 1
+#define MAXFILE_BUILD_NAME "GaussianBlurDFE"
+#define MAXFILE_BUILD_DIR  "/home/maxeler/workspace/GaussianBlurDFE/builds/build1/GaussianBlurDFE_MAX5C_DFE_SIM"
+#define MAXFILE_BUILD_DATE  20200504
+#define MAXFILE_BUILD_REV   1
+#endif
+
+#ifdef PARAM
+#define PARAM_PRESENT 1
+PARAM(nxMax, 8192)
+PARAM(DYNAMIC_CLOCKS_ENABLED, 0)
+PARAM(APP_ID, 0)
+PARAM(REV_ID, 0)
+PARAM(CHAIN_LENGTH, 43)
+PARAM(IS_SIMULATION, 1)
+PARAM(MEC_SUPPORTED, 1)
+PARAM(PCIE_SLAVE_STREAMING, 0)
+PARAM(PCIE_ALIGNMENT, 16)
+PARAM(NUM_IFPGA_LINKS, 0)
+#endif
+
+#ifdef STRING_PARAM
+#define STRING_PARAM_PRESENT 1
+STRING_PARAM(BOARD_MODEL, "MAX5_LIMA")
+#endif
+
+
+
+#ifdef INCLUDE_GENERATED_CPP_HEADERS
+#include "GaussianBlurDFEKernel.h"
+#endif
+
+
+
+#ifdef ENGINE_PARAMETERS
+#define ENGINE_PARAMETERS_PRESENT 1
+ENGINE_PARAMETERS(DFEModel, <DFEModel>, GALAVA)
+ENGINE_PARAMETERS(maxFileName, <string>, "GaussianBlurDFE")
+ENGINE_PARAMETERS(target, Target, DFE_SIM)
+ENGINE_PARAMETERS(enableMPCX, <boolean>, false)
+ENGINE_PARAMETERS(MPPRStartCT, <integer>, 1)
+ENGINE_PARAMETERS(MPPREndCT, <integer>, 1)
+ENGINE_PARAMETERS(MPPRThreads, <integer>, 1)
+ENGINE_PARAMETERS(MPPRRetryThreshold, <integer>, 0)
+#endif
+
+
+
+
+#ifdef MANAGER_NODE
+#define MANAGER_NODE_PRESENT 1
+MANAGER_NODE(GaussianBlurDFEKernel, Kernel)
+MANAGER_NODE(x, PCIe_From_Host)
+MANAGER_NODE(y, PCIe_To_Host)
+MANAGER_NODE(Stream_3, DualAspectMux)
+MANAGER_NODE(Stream_5, DualAspectReg)
+MANAGER_NODE(Stream_14, StreamPullPushAdapter)
+MANAGER_NODE(Stream_8, Fifo)
+MANAGER_NODE(Stream_10, Fifo)
+MANAGER_NODE(Stream_12, Fifo)
+#endif
+
+#ifdef MANAGER_NODE_IO
+#define MANAGER_NODE_IO_PRESENT 1
+MANAGER_NODE_IO(GaussianBlurDFEKernel, x, IN, STREAM, 32, PULL)
+MANAGER_NODE_IO(GaussianBlurDFEKernel, y, OUT, STREAM, 32, PUSH)
+MANAGER_NODE_IO(x, x, OUT, PCIE, 128, PUSH)
+MANAGER_NODE_IO(y, y, IN, PCIE, 128, PUSH)
+MANAGER_NODE_IO(Stream_3, input, IN, PCIE, 128, PULL)
+MANAGER_NODE_IO(Stream_3, output, OUT, PCIE, 32, PUSH)
+MANAGER_NODE_IO(Stream_5, input, IN, PCIE, 32, PULL)
+MANAGER_NODE_IO(Stream_5, output, OUT, PCIE, 128, PULL)
+MANAGER_NODE_IO(Stream_14, input, IN, PCIE, 128, PULL)
+MANAGER_NODE_IO(Stream_14, output, OUT, PCIE, 128, PUSH)
+MANAGER_NODE_IO(Stream_8, input, IN, PCIE, 128, PUSH)
+MANAGER_NODE_IO(Stream_8, output, OUT, PCIE, 128, PULL)
+MANAGER_NODE_IO(Stream_10, input, IN, PCIE, 32, PUSH)
+MANAGER_NODE_IO(Stream_10, output, OUT, STREAM, 32, PULL)
+MANAGER_NODE_IO(Stream_12, input, IN, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_12, output, OUT, PCIE, 32, PULL)
+#endif
+
+#ifdef MANAGER_STREAM
+#define MANAGER_STREAM_PRESENT 1
+MANAGER_STREAM(x, x, Stream_8, input, 128)
+MANAGER_STREAM(GaussianBlurDFEKernel, y, Stream_12, input, 32)
+MANAGER_STREAM(Stream_3, output, Stream_10, input, 32)
+MANAGER_STREAM(Stream_5, output, Stream_14, input, 128)
+MANAGER_STREAM(Stream_14, output, y, y, 128)
+MANAGER_STREAM(Stream_8, output, Stream_3, input, 128)
+MANAGER_STREAM(Stream_10, output, GaussianBlurDFEKernel, x, 32)
+MANAGER_STREAM(Stream_12, output, Stream_5, input, 32)
+#endif
+
+#ifdef MANAGER_NODE_STACK_TRACE
+#define MANAGER_NODE_STACK_TRACE_PRESENT 1
+MANAGER_NODE_STACK_TRACE(GaussianBlurDFEKernel, "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+MANAGER_NODE_STACK_TRACE(x, "com.maxeler.maxcompiler.v2.managers.custom.api.ManagerPCIe.addStreamFromCPU(ManagerPCIe.java:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:18)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+MANAGER_NODE_STACK_TRACE(y, "com.maxeler.maxcompiler.v2.managers.custom.api.ManagerPCIe.addStreamToCPU(ManagerPCIe.java:29)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:21)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+MANAGER_NODE_STACK_TRACE(Stream_3, "com.maxeler.platform.max5.manager.Max5ManagerBase.build(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:29)\n")
+MANAGER_NODE_STACK_TRACE(Stream_5, "com.maxeler.platform.max5.manager.Max5ManagerBase.build(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:29)\n")
+MANAGER_NODE_STACK_TRACE(Stream_14, "com.maxeler.platform.max5.manager.Max5ManagerBase.build(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:29)\n")
+MANAGER_NODE_STACK_TRACE(Stream_8, "com.maxeler.platform.max5.manager.Max5ManagerBase.build(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:29)\n")
+MANAGER_NODE_STACK_TRACE(Stream_10, "com.maxeler.platform.max5.manager.Max5ManagerBase.build(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:29)\n")
+MANAGER_NODE_STACK_TRACE(Stream_12, "com.maxeler.platform.max5.manager.Max5ManagerBase.build(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:29)\n")
+#endif
+
+
+#ifdef USER_CLOCKS
+#define USER_CLOCKS_PRESENT 1
+USER_CLOCKS(STREAM, 100.0, false)
+#endif
+
+#ifdef MANAGER_NODE_PROPERTY
+#define MANAGER_NODE_PROPERTY_PRESENT 1
+MANAGER_NODE_PROPERTY(GaussianBlurDFEKernel, control_pipelining_depth, 2)
+#endif
+
+
+#ifdef KERNEL_CORE
+#define KERNEL_CORE_PRESENT 1
+KERNEL_CORE(GaussianBlurDFEKernel)
+#endif
+
+#ifdef KERNEL_HOST_CONTROLLED
+#define KERNEL_HOST_CONTROLLED_PRESENT 1
+KERNEL_HOST_CONTROLLED(GaussianBlurDFEKernel, GaussianBlurDFEKernel)
+#endif
+
+#ifdef DEBUG_INPUT_BITS
+#define DEBUG_INPUT_BITS_PRESENT 1
+DEBUG_INPUT_BITS(GaussianBlurDFEKernel, x, 0)
+#endif
+
+#ifdef DEBUG_OUTPUT_BITS
+#define DEBUG_OUTPUT_BITS_PRESENT 1
+DEBUG_OUTPUT_BITS(GaussianBlurDFEKernel, y, 0)
+#endif
+
+#ifdef MANAGER_NODE_CPP_SIM_MODEL_CTOR
+#define MANAGER_NODE_CPP_SIM_MODEL_CTOR_PRESENT 1
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(x, PCIePushSourceSync16, "x")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_8, FifoPushToPullSync, "Stream_8", false, 512, 128)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_3, DualAspectMuxSync, "Stream_3", 32, 4)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_10, FifoPushToPullSync, "Stream_10", false, 512, 32)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(GaussianBlurDFEKernel, GaussianBlurDFEKernel, "GaussianBlurDFEKernel")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_12, FifoPushToPullSync, "Stream_12", false, 512, 32)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_5, DualAspectRegSync, "Stream_5", 32, 4)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_14, PullToPushAdapterSync, "Stream_14")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(y, PCIePushSinkSync16, "y")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(CapabilityReg, CapRegs, "CapabilityReg", 0, 1, 1, 0, 0, 0, 0, 0, 43)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(ifpga, IFPGARegs)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(sfa, SFARegs)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(ChecksumMemory, ChecksumMem, "ChecksumMemory", "de7c7cc08f322dfad8caf768f0fd02db695703eb3fd84809dfe6e9e175fc2a5e")
+#endif
+
+#ifdef MANAGER_NODE_CPP_SIM_MODEL_SETUP
+#define MANAGER_NODE_CPP_SIM_MODEL_SETUP_PRESENT 1
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_ctld_almost_empty, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_ctld_done, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_ctld_empty, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_ctld_read, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_ctld_read_pipe_dbg, 3, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_ctld_request, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_done_out, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_fill_level, 5, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_flush_level, 5, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_flush_start, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_flush_start_level, 5, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_flushing, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_full_level, 5, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_out_stall, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_out_valid, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(GaussianBlurDFEKernel, addDebugRegister, reg_dbg_stall_vector, 1, 0)
+#endif
+
+#ifdef PCIE_STREAM
+#define PCIE_STREAM_PRESENT 1
+PCIE_STREAM(x, STREAM_FROM_HOST, 0)
+PCIE_STREAM(y, STREAM_TO_HOST, 0)
+#endif
+
+
+
+
+
+
+
+
+#ifdef REG
+#define REG_PRESENT 1
+REG(GaussianBlurDFEKernel.io_x_force_disabled, 0x0, 1, hwOffsetFix(1, 0, UNSIGNED))
+REG(GaussianBlurDFEKernel.w, 0x1, 4, hwOffsetFix(32, 0, TWOSCOMPLEMENT))
+REG(GaussianBlurDFEKernel.size, 0x5, 4, hwOffsetFix(32, 0, TWOSCOMPLEMENT))
+REG(GaussianBlurDFEKernel.io_y_force_disabled, 0x9, 1, hwOffsetFix(1, 0, UNSIGNED))
+REG(GaussianBlurDFEKernel.run_cycle_count, 0xa, 6, hwOffsetFix(48, 0, UNSIGNED))
+REG(GaussianBlurDFEKernel.current_run_cycle_count, 0x10, 6, hwOffsetFix(48, 0, UNSIGNED))
+REG(GaussianBlurDFEKernel.dbg_ctld_almost_empty, 0x16, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_ctld_done, 0x17, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_ctld_empty, 0x18, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_ctld_read, 0x19, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_ctld_read_pipe_dbg, 0x1a, 1, hwBits(3))
+REG(GaussianBlurDFEKernel.dbg_ctld_request, 0x1b, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_done_out, 0x1c, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_fill_level, 0x1d, 1, hwBits(5))
+REG(GaussianBlurDFEKernel.dbg_flush_level, 0x1e, 1, hwBits(5))
+REG(GaussianBlurDFEKernel.dbg_flush_start, 0x1f, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_flush_start_level, 0x20, 1, hwBits(5))
+REG(GaussianBlurDFEKernel.dbg_flushing, 0x21, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_full_level, 0x22, 1, hwBits(5))
+REG(GaussianBlurDFEKernel.dbg_out_stall, 0x23, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_out_valid, 0x24, 1, hwBits(1))
+REG(GaussianBlurDFEKernel.dbg_stall_vector, 0x25, 1, hwBits(1))
+REG(ifpga.ifpga_ctrl, 0x26, 1, hwBits(8))
+REG(SignalForwardingAdapter.SFA_FORWARD_EN, 0x27, 4, hwBits(32))
+#endif
+
+#ifdef REG_V2
+#define REG_V2_PRESENT 1
+REG_V2(GaussianBlurDFEKernel.io_x_force_disabled, 0x0, 1, hwOffsetFix(1, 0, UNSIGNED), HOST_WRITE_ONLY, true)
+REG_V2(GaussianBlurDFEKernel.w, 0x1, 4, hwOffsetFix(32, 0, TWOSCOMPLEMENT), HOST_WRITE_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.size, 0x5, 4, hwOffsetFix(32, 0, TWOSCOMPLEMENT), HOST_WRITE_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.io_y_force_disabled, 0x9, 1, hwOffsetFix(1, 0, UNSIGNED), HOST_WRITE_ONLY, true)
+REG_V2(GaussianBlurDFEKernel.run_cycle_count, 0xa, 6, hwOffsetFix(48, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.current_run_cycle_count, 0x10, 6, hwOffsetFix(48, 0, UNSIGNED), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_ctld_almost_empty, 0x16, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_ctld_done, 0x17, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_ctld_empty, 0x18, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_ctld_read, 0x19, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_ctld_read_pipe_dbg, 0x1a, 1, hwBits(3), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_ctld_request, 0x1b, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_done_out, 0x1c, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_fill_level, 0x1d, 1, hwBits(5), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_flush_level, 0x1e, 1, hwBits(5), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_flush_start, 0x1f, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_flush_start_level, 0x20, 1, hwBits(5), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_flushing, 0x21, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_full_level, 0x22, 1, hwBits(5), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_out_stall, 0x23, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_out_valid, 0x24, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(GaussianBlurDFEKernel.dbg_stall_vector, 0x25, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(ifpga.ifpga_ctrl, 0x26, 1, hwBits(8), HOST_READ_WRITE, false)
+REG_V2(SignalForwardingAdapter.SFA_FORWARD_EN, 0x27, 4, hwBits(32), HOST_READ_WRITE, false)
+#endif
+
+
+
+
+#ifdef CHECKSUM
+#define CHECKSUM_PRESENT 1
+CHECKSUM("de7c7cc08f322dfad8caf768f0fd02db695703eb3fd84809dfe6e9e175fc2a5e")
+#endif
+
+#ifdef CAPABILITY
+#define CAPABILITY_PRESENT 1
+CAPABILITY(LIMAREV, LIMAREVA)
+CAPABILITY(LIMARAM, DDR4_48GB)
+CAPABILITY(LIMAFPGA, xcVU9P_FLGB2104_2_E)
+#endif
+
+#ifdef DEFINE_DESIGN_NAME
+#define DESIGN_NAME GaussianBlurDFE
+#endif /* DEFINE_DESIGN_NAME */
+
+#ifndef SLIC_NO_DECLARATIONS
+/**\file */
+#ifndef SLIC_DECLARATIONS_GaussianBlurDFE_H
+#define SLIC_DECLARATIONS_GaussianBlurDFE_H
+#include "MaxSLiCInterface.h"
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+#define GaussianBlurDFE_PCIE_ALIGNMENT (16)
+#define GaussianBlurDFE_nxMax (8192)
+
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------- Interface default -----------------------------*/
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * \brief Basic static function for the interface 'default'.
+ * 
+ * \param [in] ticks_GaussianBlurDFEKernel The number of ticks for which kernel "GaussianBlurDFEKernel" will run.
+ * \param [in] inscalar_GaussianBlurDFEKernel_size Input scalar parameter "GaussianBlurDFEKernel.size".
+ * \param [in] inscalar_GaussianBlurDFEKernel_w Input scalar parameter "GaussianBlurDFEKernel.w".
+ * \param [in] instream_x Stream "x".
+ * \param [in] instream_size_x The size of the stream instream_x in bytes.
+ * \param [out] outstream_y Stream "y".
+ * \param [in] outstream_size_y The size of the stream outstream_y in bytes.
+ */
+void GaussianBlurDFE(
+	uint64_t ticks_GaussianBlurDFEKernel,
+	uint64_t inscalar_GaussianBlurDFEKernel_size,
+	uint64_t inscalar_GaussianBlurDFEKernel_w,
+	const void *instream_x,
+	size_t instream_size_x,
+	void *outstream_y,
+	size_t outstream_size_y);
+
+/**
+ * \brief Basic static non-blocking function for the interface 'default'.
+ * 
+ * Schedule to run on an engine and return immediately.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ * 
+ * 
+ * \param [in] ticks_GaussianBlurDFEKernel The number of ticks for which kernel "GaussianBlurDFEKernel" will run.
+ * \param [in] inscalar_GaussianBlurDFEKernel_size Input scalar parameter "GaussianBlurDFEKernel.size".
+ * \param [in] inscalar_GaussianBlurDFEKernel_w Input scalar parameter "GaussianBlurDFEKernel.w".
+ * \param [in] instream_x Stream "x".
+ * \param [in] instream_size_x The size of the stream instream_x in bytes.
+ * \param [out] outstream_y Stream "y".
+ * \param [in] outstream_size_y The size of the stream outstream_y in bytes.
+ * \return A handle on the execution status, or NULL in case of error.
+ */
+max_run_t *GaussianBlurDFE_nonblock(
+	uint64_t ticks_GaussianBlurDFEKernel,
+	uint64_t inscalar_GaussianBlurDFEKernel_size,
+	uint64_t inscalar_GaussianBlurDFEKernel_w,
+	const void *instream_x,
+	size_t instream_size_x,
+	void *outstream_y,
+	size_t outstream_size_y);
+
+/**
+ * \brief Advanced static interface, structure for the engine interface 'default'
+ * 
+ */
+typedef struct { 
+	uint64_t ticks_GaussianBlurDFEKernel; /**<  [in] The number of ticks for which kernel "GaussianBlurDFEKernel" will run. */
+	uint64_t inscalar_GaussianBlurDFEKernel_size; /**<  [in] Input scalar parameter "GaussianBlurDFEKernel.size". */
+	uint64_t inscalar_GaussianBlurDFEKernel_w; /**<  [in] Input scalar parameter "GaussianBlurDFEKernel.w". */
+	const void *instream_x; /**<  [in] Stream "x". */
+	size_t instream_size_x; /**<  [in] The size of the stream instream_x in bytes. */
+	void *outstream_y; /**<  [out] Stream "y". */
+	size_t outstream_size_y; /**<  [in] The size of the stream outstream_y in bytes. */
+} GaussianBlurDFE_actions_t;
+
+/**
+ * \brief Advanced static function for the interface 'default'.
+ * 
+ * \param [in] engine The engine on which the actions will be executed.
+ * \param [in,out] interface_actions Actions to be executed.
+ */
+void GaussianBlurDFE_run(
+	max_engine_t *engine,
+	GaussianBlurDFE_actions_t *interface_actions);
+
+/**
+ * \brief Advanced static non-blocking function for the interface 'default'.
+ *
+ * Schedule the actions to run on the engine and return immediately.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * 
+ * \param [in] engine The engine on which the actions will be executed.
+ * \param [in] interface_actions Actions to be executed.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *GaussianBlurDFE_run_nonblock(
+	max_engine_t *engine,
+	GaussianBlurDFE_actions_t *interface_actions);
+
+/**
+ * \brief Group run advanced static function for the interface 'default'.
+ * 
+ * \param [in] group Group to use.
+ * \param [in,out] interface_actions Actions to run.
+ *
+ * Run the actions on the first device available in the group.
+ */
+void GaussianBlurDFE_run_group(max_group_t *group, GaussianBlurDFE_actions_t *interface_actions);
+
+/**
+ * \brief Group run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule the actions to run on the first device available in the group and return immediately.
+ * The status of the run must be checked with ::max_wait. 
+ * Note that use of ::max_nowait is prohibited with non-blocking running on groups:
+ * see the ::max_run_group_nonblock documentation for more explanation.
+ *
+ * \param [in] group Group to use.
+ * \param [in] interface_actions Actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *GaussianBlurDFE_run_group_nonblock(max_group_t *group, GaussianBlurDFE_actions_t *interface_actions);
+
+/**
+ * \brief Array run advanced static function for the interface 'default'.
+ * 
+ * \param [in] engarray The array of devices to use.
+ * \param [in,out] interface_actions The array of actions to run.
+ *
+ * Run the array of actions on the array of engines.  The length of interface_actions
+ * must match the size of engarray.
+ */
+void GaussianBlurDFE_run_array(max_engarray_t *engarray, GaussianBlurDFE_actions_t *interface_actions[]);
+
+/**
+ * \brief Array run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule to run the array of actions on the array of engines, and return immediately.
+ * The length of interface_actions must match the size of engarray.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * \param [in] engarray The array of devices to use.
+ * \param [in] interface_actions The array of actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *GaussianBlurDFE_run_array_nonblock(max_engarray_t *engarray, GaussianBlurDFE_actions_t *interface_actions[]);
+
+/**
+ * \brief Converts a static-interface action struct into a dynamic-interface max_actions_t struct.
+ *
+ * Note that this is an internal utility function used by other functions in the static interface.
+ *
+ * \param [in] maxfile The maxfile to use.
+ * \param [in] interface_actions The interface-specific actions to run.
+ * \return The dynamic-interface actions to run, or NULL in case of error.
+ */
+max_actions_t* GaussianBlurDFE_convert(max_file_t *maxfile, GaussianBlurDFE_actions_t *interface_actions);
+
+/**
+ * \brief Initialise a maxfile.
+ */
+max_file_t* GaussianBlurDFE_init(void);
+
+/* Error handling functions */
+int GaussianBlurDFE_has_errors(void);
+const char* GaussianBlurDFE_get_errors(void);
+void GaussianBlurDFE_clear_errors(void);
+/* Free statically allocated maxfile data */
+void GaussianBlurDFE_free(void);
+/* returns: -1 = error running command; 0 = no error reported */
+int GaussianBlurDFE_simulator_start(void);
+/* returns: -1 = error running command; 0 = no error reported */
+int GaussianBlurDFE_simulator_stop(void);
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
+#endif /* SLIC_DECLARATIONS_GaussianBlurDFE_H */
+
+#endif /* SLIC_NO_DECLARATIONS */
+
+#ifdef PHOTON_NODE_DATA
+#define PHOTON_NODE_DATA_PRESENT 1
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 271, NodeInputMappedReg, "Scalar input (io_y_force_disabled)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 272, NodeNot, "~", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 0, NodeInputMappedReg, "Scalar input (io_x_force_disabled)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:15)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 1, NodeNot, "~", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:15)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 2, NodeInput, "Input(x)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:15)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 379, NodeFIFO, "FIFO(1)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 25, NodeStreamOffset, "stream offset: -4", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 378, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 3, NodeInputMappedReg, "Scalar input (w)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:17)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 292, NodeSub, "-", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 26, NodeStreamOffset, "stream offset: -4", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 27, NodeDynamicStreamOffset, "dynamic offset: [-4, 0]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 293, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 83, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 32, NodeStreamOffset, "stream offset: -1", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 288, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 34, NodeDynamicStreamOffset, "dynamic offset: [-1, 0]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 294, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 295, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 296, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 116, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 377, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 38, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 39, NodeStreamOffset, "stream offset: -2", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 40, NodeDynamicStreamOffset, "dynamic offset: [0, 2]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 297, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 121, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 135, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 391, NodeFIFO, "FIFO(1)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 392, NodeFIFO, "FIFO(1)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 45, NodeStreamOffset, "stream offset: -3", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 298, NodeNeg, "(-)", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 46, NodeStreamOffset, "stream offset: -3", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 47, NodeDynamicStreamOffset, "dynamic offset: [-3, 0]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 299, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 300, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 301, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 154, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 393, NodeFIFO, "FIFO(1)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 394, NodeFIFO, "FIFO(2)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 395, NodeFIFO, "FIFO(1)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 302, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 303, NodeReinterpret, "<{HWOffsetFix:32, 2, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 304, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 173, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 57, NodeStreamOffset, "stream offset: -3", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 58, NodeDynamicStreamOffset, "dynamic offset: [0, 3]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 305, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 306, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 307, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 192, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 63, NodeStreamOffset, "stream offset: -2", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 376, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 309, NodeSub, "-", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 64, NodeStreamOffset, "stream offset: -2", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 65, NodeDynamicStreamOffset, "dynamic offset: [-2, 0]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 310, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 197, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 211, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 290, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 71, NodeDynamicStreamOffset, "dynamic offset: [0, 1]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 311, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 312, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 313, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 230, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 375, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 75, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 76, NodeStreamOffset, "stream offset: -4", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 77, NodeDynamicStreamOffset, "dynamic offset: [0, 4]", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 314, NodeShift, ">> 16", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 235, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 249, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 315, NodeReinterpret, "<{HWOffsetFix:32, -4, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:66)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 316, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:66)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 317, NodeShift, "<< 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 260, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 388, NodeFIFO, "FIFO(2)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 318, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 86, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 374, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 88, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 319, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 105, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 373, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 107, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 320, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 321, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 117, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 322, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 124, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 372, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 126, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 136, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 323, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 143, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 371, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 145, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 324, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 325, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 155, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 326, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 162, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 370, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 164, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 327, NodeReinterpret, "<{HWOffsetFix:32, 2, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 328, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 174, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 329, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 181, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 369, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 183, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 330, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 331, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 193, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 332, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 200, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 368, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 202, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 212, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 333, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 219, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 367, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 221, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 334, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 335, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 231, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 336, NodeShift, ">> 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 238, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 366, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 240, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 250, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 337, NodeReinterpret, "<{HWOffsetFix:32, -4, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:67)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 338, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:67)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 365, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 262, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 263, NodeOr, "|", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 339, NodeShift, "<< 8", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 266, NodeReinterpret, "<{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 364, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 90, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 363, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 109, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 340, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 341, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 118, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 362, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 128, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 137, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 361, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 147, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 342, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 343, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 156, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 360, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 166, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 344, NodeReinterpret, "<{HWOffsetFix:32, 2, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 345, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 175, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 359, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 185, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 346, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 347, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 194, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 358, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 204, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 213, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 357, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 223, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 348, NodeReinterpret, "<{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 349, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 232, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 356, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 242, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 251, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 350, NodeReinterpret, "<{HWOffsetFix:32, -4, TWOSCOMPLEMENT}>", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:68)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 351, NodeCast, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:68)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 355, NodeConstantRawBits, "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 268, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 390, NodeFIFO, "FIFO(1)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 269, NodeOr, "|", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 274, NodeOutput, "Output(y)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 279, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 354, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 276, NodeConstantRawBits, "{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 277, NodeCounter, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 278, NodeStreamOffset, "stream offset: 1", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 280, NodeOutputMappedReg, "Scalar output (current_run_cycle_count)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 353, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 282, NodeConstantRawBits, "{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 283, NodeCounter, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 285, NodeInputMappedReg, "Scalar input (run_cycle_count)", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 352, NodeEqInlined, "==", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 284, NodeFlush, "flush on trigger", "com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+PHOTON_NODE_DATA(GaussianBlurDFEKernel, 4, NodeInputMappedReg, "Scalar input (size)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)\ngaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)\ngaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)\ngaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)\n")
+#endif
+
+#ifdef SLIC_USE_DEFINITIONS
+#include <stdio.h>
+#include <math.h>
+#include <pthread.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+static max_file_t *stored_maxfile = NULL;
+static max_engine_t *stored_engine = NULL;
+static char *stored_error = NULL;
+static int stored_has_error = 0;
+static pthread_once_t slic_bs_is_initialised = PTHREAD_ONCE_INIT;
+
+static void set_error(const char *error_str)
+{
+	stored_has_error = 1; 
+	if(stored_error == NULL) {
+		stored_error = strdup(error_str);
+	} else {
+		char *nerr = malloc(strlen(stored_error) + strlen(error_str) + 2);
+		sprintf(nerr, "%s\n%s", stored_error, error_str);
+		free(stored_error);
+		stored_error = nerr;
+	}
+}
+static void set_error_and_free(char *error_str){
+	set_error(error_str);
+	free(error_str);
+}
+int GaussianBlurDFE_has_errors(void)
+{	return stored_has_error; }
+const char* GaussianBlurDFE_get_errors(void)
+{	return stored_error; }
+void GaussianBlurDFE_clear_errors(void)
+{
+	free(stored_error);
+	stored_error = NULL;
+	stored_has_error = 0;
+}
+
+static char GaussianBlurDFE_use_simulation[16];
+static void GaussianBlurDFE_def_use_simulation(void)
+{
+	long pid = ((long) getpid()) % 100000;
+	snprintf(GaussianBlurDFE_use_simulation, 16, "Gaussian_%05ld_", pid);
+}
+static const char *GaussianBlurDFE_check_use_simulation(void)
+{
+	GaussianBlurDFE_def_use_simulation();
+	const char *use_sim = max_config_get_string(MAX_CONFIG_USE_SIMULATION);
+	if (use_sim == NULL) {
+		use_sim = GaussianBlurDFE_use_simulation;
+		max_config_set_string(MAX_CONFIG_USE_SIMULATION, use_sim);
+	}
+	return use_sim;
+}
+
+static int GaussianBlurDFE_simulation_launch = 0;
+int GaussianBlurDFE_simulator_start(void)
+{
+	int retval = 0;
+	const char *use_sim = GaussianBlurDFE_check_use_simulation();
+	char buff[1024];
+	snprintf(buff, 1024, "PATH=simutils:$PATH maxcompilersim -d 1 -n %s -c MAX5C -S simutils restart", use_sim);
+	FILE *pipe_fp = popen(buff, "r");
+	if (pipe_fp == NULL) {
+		strncat(buff, " : failed to execute.", (1024 - strlen(buff)));
+		set_error(buff);
+		return -1;
+	}
+	while (fgets(buff, 1024, pipe_fp) != NULL) {
+		/* Uncomment this to get simulator command output */
+		/* fprintf(stderr, buff); */
+		if (strstr(buff, "Error")) {
+			set_error(buff);
+			retval = -1;
+		}
+	}
+	pclose(pipe_fp);
+	return retval;
+}
+
+int GaussianBlurDFE_simulator_stop(void)
+{
+	const char *use_sim = GaussianBlurDFE_check_use_simulation();
+	char buff[1024];
+	snprintf(buff, 1024, "PATH=simutils:$PATH maxcompilersim -d 1 -n %s -c MAX5C -S simutils stop", use_sim);
+	FILE *pipe_fp = popen(buff, "r");
+	if (pipe_fp == NULL) {
+		strncat(buff, " : failed to execute.", (1024 - strlen(buff)));
+		set_error(buff);
+		return -1;
+	}
+	while (fgets(buff, 1024, pipe_fp) != NULL) {
+		/* Uncomment this to get simulator command output */
+		/* fprintf(stderr, buff); */
+		;
+	}
+	pclose(pipe_fp);
+	return 0;
+}
+
+static void GaussianBlurDFE_static_init(void) 
+{
+	stored_maxfile = GaussianBlurDFE_init();
+	if (stored_maxfile == NULL || !max_ok(stored_maxfile->errors)) {
+		stored_maxfile = NULL;
+		if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) abort();
+		else { set_error("Unable to load maxfile"); return; }
+	}
+	if(!max_ok(max_global_errors())) {
+		set_error_and_free(max_errors_trace(max_global_errors()));
+		return;
+	}
+	if(!max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR))
+		max_errors_mode(stored_maxfile->errors, 0);
+	time_t timeout_previous = max_load_timeout(stored_maxfile, 30);
+	const char *use_sim = GaussianBlurDFE_check_use_simulation();
+	if (max_ping_daemon(stored_maxfile, use_sim) == 0) {
+		int sim_stat = GaussianBlurDFE_simulator_start();
+		if ((sim_stat == 0) && (max_ping_daemon(stored_maxfile, use_sim) == 1)) {
+			GaussianBlurDFE_simulation_launch = 1;
+		} else {
+			set_error("Error: An error occurred while trying to start the simulation infrastructure automatically.");
+			set_error("Error: Check that 'use_simulation=<simulator_name>' is set correctly in your SLiC configuration");
+			set_error("Error: and that the associated simulated system daemon is running.");
+			max_file_free(stored_maxfile);
+			stored_maxfile = NULL;
+			return;
+		}
+	}
+	stored_engine = max_load(stored_maxfile, "*");
+	if (!max_ok(stored_maxfile->errors)) {
+		if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) {
+			fprintf(stderr, "\nUnable to load engine: aborting now.\n\n");
+			fflush(stderr);
+			abort();
+		} else {
+			set_error_and_free(max_errors_trace(stored_maxfile->errors));
+			max_file_free(stored_maxfile);
+			stored_maxfile = NULL;
+			return;
+		} 
+	} 
+	max_load_timeout(stored_maxfile, timeout_previous);
+}
+void GaussianBlurDFE_free(void)
+{
+	if (stored_engine != NULL) {
+		max_unload(stored_engine);
+		stored_engine = NULL;
+	}
+	if (stored_maxfile != NULL) {
+		max_file_free(stored_maxfile);
+		stored_maxfile = NULL;
+	}
+	if (stored_error != NULL) {
+		free(stored_error);
+		stored_error = NULL;
+	}
+	if (GaussianBlurDFE_simulation_launch == 1) {
+		int sim_stat = GaussianBlurDFE_simulator_stop();
+		if (sim_stat != 0 ) {
+			fprintf(stderr, "Error stopping simulator.");
+		}
+		GaussianBlurDFE_simulation_launch = 0;
+	}
+}
+
+static int GaussianBlurDFE_get_pcie_alignment(void)
+{
+#ifdef GaussianBlurDFE_PCIE_ALIGNMENT
+	return ((GaussianBlurDFE_PCIE_ALIGNMENT < 1) ? 16 : GaussianBlurDFE_PCIE_ALIGNMENT);
+#else
+	return 16;
+#endif
+}
+
+static int GaussianBlurDFE_check_aligned(const void *data)
+{
+	uintptr_t pointer = (uintptr_t) data;
+	int alignment = GaussianBlurDFE_get_pcie_alignment();
+	return (pointer % alignment) ? 1 : 0;
+}
+
+static void *GaussianBlurDFE_malloc_aligned(const size_t size)
+{
+	void *ptr;
+	int alignment = GaussianBlurDFE_get_pcie_alignment();
+	posix_memalign(&ptr, alignment, size);
+	return ptr;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------- Interface default -----------------------------*/
+/*----------------------------------------------------------------------------*/
+
+
+
+#define CHECK_ERRORS_ST(ST, RET) if(!max_ok(ST->errors)) { if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) { fprintf(stderr, "%s\n", max_errors_trace(ST->errors)); abort(); } set_error_and_free(max_errors_trace(ST->errors)); return RET; } 
+#define CHECK_NULL(VALUE, MESSAGE, RET) if(VALUE == NULL) { if (max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) { fprintf(stderr, "%s\n%s\n", (stored_error == NULL) ? "" : stored_error, MESSAGE); abort(); } set_error(MESSAGE); return RET; }
+
+ 
+typedef struct GaussianBlurDFE_callback_stream {
+	uint8_t *user_ptr;
+	uint8_t *aligned_ptr;
+	size_t   size;
+	int      is_output;
+} GaussianBlurDFE_callback_stream_t;
+
+typedef struct GaussianBlurDFE_callback_data {
+	GaussianBlurDFE_callback_stream_t stream[2]; 
+	int count;
+	int max_count;
+} GaussianBlurDFE_callback_data_t;
+
+static void GaussianBlurDFE_callback_internal(void *cb_data)
+{
+	GaussianBlurDFE_callback_data_t *data = (GaussianBlurDFE_callback_data_t*) cb_data;
+	for (int i = 0 ; i < data->count ; i++ ) {
+		GaussianBlurDFE_callback_stream_t *s = &data->stream[i];
+		if (s->is_output && (s->size > 0)) {
+			memcpy(s->user_ptr, s->aligned_ptr, s->size);
+		}
+		free(s->aligned_ptr);
+	}
+	free(data);
+}
+
+static max_actions_t* GaussianBlurDFE_convert_internal(
+	max_file_t *maxfile,
+	GaussianBlurDFE_actions_t *interface_actions,
+	int  is_internal_call,
+	void (**callback_func)(void*),
+	void **callback_data)
+{
+	max_actions_t *actions = max_actions_init(maxfile, NULL);
+	if(actions == NULL) return NULL;
+
+#define CHECK_ERRORS if(!max_ok(actions->errors)) { set_error_and_free(max_errors_trace(actions->errors)); return NULL; } 
+
+	GaussianBlurDFE_callback_data_t *cb_data = NULL;
+	int use_callback = (callback_func != NULL) && (callback_data != NULL);
+	if (use_callback) {
+		cb_data = malloc(sizeof(GaussianBlurDFE_callback_data_t));
+		if (cb_data == NULL) {
+			fprintf(stderr, "Unable to allocate memory for stream callback data in function GaussianBlurDFE_convert_internal\n");
+			return NULL;
+		}
+		cb_data->max_count = 2;
+		cb_data->count     = 0;
+		*callback_data     = cb_data;
+		*callback_func     = &GaussianBlurDFE_callback_internal;
+	}
+
+	/* code for scalar GaussianBlurDFEKernel.run_cycle_count */
+	uint64_t ticks_GaussianBlurDFEKernel = interface_actions->ticks_GaussianBlurDFEKernel;
+	max_set_ticks(actions, "GaussianBlurDFEKernel", ticks_GaussianBlurDFEKernel);
+	CHECK_ERRORS;
+	/* end of code for scalar GaussianBlurDFEKernel.run_cycle_count*/
+	
+	/* code for scalar GaussianBlurDFEKernel.size */
+	uint64_t inscalar_GaussianBlurDFEKernel_size = interface_actions->inscalar_GaussianBlurDFEKernel_size;
+	max_set_uint64t(actions, "GaussianBlurDFEKernel", "size", inscalar_GaussianBlurDFEKernel_size);
+	CHECK_ERRORS;
+	/* end of code for scalar GaussianBlurDFEKernel.size*/
+	
+	/* code for scalar GaussianBlurDFEKernel.w */
+	uint64_t inscalar_GaussianBlurDFEKernel_w = interface_actions->inscalar_GaussianBlurDFEKernel_w;
+	max_set_uint64t(actions, "GaussianBlurDFEKernel", "w", inscalar_GaussianBlurDFEKernel_w);
+	CHECK_ERRORS;
+	/* end of code for scalar GaussianBlurDFEKernel.w*/
+	
+	/* code for stream x */
+	size_t instream_size_x = interface_actions->instream_size_x;
+	if (instream_size_x > 0) {
+		const void *stream_ptr = interface_actions->instream_x;
+		if (use_callback && (1 == GaussianBlurDFE_check_aligned(interface_actions->instream_x))) {
+			void *aligned_instream_x = malloc(instream_size_x);
+			if (aligned_instream_x == NULL) {
+				char error_msg[256];
+				snprintf(error_msg, sizeof(error_msg) / sizeof(char),
+						"Failed to allocate %zu bytes of memory for stream x.",
+						instream_size_x);
+				max_report_error_slic(actions->errors, __FILE__, __LINE__, 526, error_msg);
+				CHECK_ERRORS;
+			}
+			(&cb_data->stream[cb_data->count])->user_ptr    = (uint8_t*) interface_actions->instream_x;
+			(&cb_data->stream[cb_data->count])->aligned_ptr = (uint8_t*) aligned_instream_x;
+			(&cb_data->stream[cb_data->count])->size        = instream_size_x;
+			(&cb_data->stream[cb_data->count])->is_output   = 0;
+			cb_data->count += 1;
+			memcpy(aligned_instream_x, interface_actions->instream_x, instream_size_x);
+			stream_ptr = aligned_instream_x;
+		}
+		max_queue_input(actions, "x", stream_ptr, instream_size_x);
+		CHECK_ERRORS;
+	}
+	/* end of code for stream x */
+	
+	/* code for stream y */
+	size_t outstream_size_y = interface_actions->outstream_size_y;
+	if (outstream_size_y > 0) {
+		void *stream_ptr = interface_actions->outstream_y;
+		if (use_callback && (1 == GaussianBlurDFE_check_aligned(interface_actions->outstream_y))) {
+			void *aligned_outstream_y = malloc(outstream_size_y);
+			if (aligned_outstream_y == NULL) {
+				char error_msg[256];
+				snprintf(error_msg, sizeof(error_msg) / sizeof(char),
+						"Failed to allocate %zu bytes of memory for stream y.",
+						outstream_size_y);
+				max_report_error_slic(actions->errors, __FILE__, __LINE__, 526, error_msg);
+				CHECK_ERRORS;
+			}
+			(&cb_data->stream[cb_data->count])->user_ptr    = (uint8_t*) interface_actions->outstream_y;
+			(&cb_data->stream[cb_data->count])->aligned_ptr = (uint8_t*) aligned_outstream_y;
+			(&cb_data->stream[cb_data->count])->size        = outstream_size_y;
+			(&cb_data->stream[cb_data->count])->is_output   = 1;
+			cb_data->count += 1;
+			stream_ptr = aligned_outstream_y;
+		}
+		max_queue_output(actions, "y", stream_ptr, outstream_size_y);
+		CHECK_ERRORS;
+	}
+	/* end of code for stream y */
+	
+	if (use_callback && cb_data->count == 0) {
+		*callback_data = NULL;
+		*callback_func = NULL;
+		free(cb_data);
+	}
+	return actions;
+#undef CHECK_ERRORS
+}
+
+void GaussianBlurDFE(
+	uint64_t ticks_GaussianBlurDFEKernel,
+	uint64_t inscalar_GaussianBlurDFEKernel_size,
+	uint64_t inscalar_GaussianBlurDFEKernel_w,
+	const void *instream_x,
+	size_t instream_size_x,
+	void *outstream_y,
+	size_t outstream_size_y)
+{
+	(void) pthread_once(&slic_bs_is_initialised, GaussianBlurDFE_static_init);
+	CHECK_NULL(stored_maxfile, "Maxfile was not loaded", );
+	max_run_t *run = GaussianBlurDFE_nonblock(ticks_GaussianBlurDFEKernel, inscalar_GaussianBlurDFEKernel_size, inscalar_GaussianBlurDFEKernel_w, instream_x, instream_size_x, outstream_y, outstream_size_y);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+max_run_t *GaussianBlurDFE_nonblock(
+	uint64_t ticks_GaussianBlurDFEKernel,
+	uint64_t inscalar_GaussianBlurDFEKernel_size,
+	uint64_t inscalar_GaussianBlurDFEKernel_w,
+	const void *instream_x,
+	size_t instream_size_x,
+	void *outstream_y,
+	size_t outstream_size_y)
+{
+	GaussianBlurDFE_actions_t interface_actions;
+	interface_actions.ticks_GaussianBlurDFEKernel = ticks_GaussianBlurDFEKernel;
+	interface_actions.inscalar_GaussianBlurDFEKernel_size = inscalar_GaussianBlurDFEKernel_size;
+	interface_actions.inscalar_GaussianBlurDFEKernel_w = inscalar_GaussianBlurDFEKernel_w;
+	interface_actions.instream_x = instream_x;
+	interface_actions.instream_size_x = instream_size_x;
+	interface_actions.outstream_y = outstream_y;
+	interface_actions.outstream_size_y = outstream_size_y;
+	(void) pthread_once(&slic_bs_is_initialised, GaussianBlurDFE_static_init);
+	CHECK_NULL(stored_maxfile, "Maxfile was not loaded", NULL);
+	void (*cb_func)(void*) = NULL;
+	void  *cb_data         = NULL;
+	max_actions_t *actions = GaussianBlurDFE_convert_internal(stored_maxfile, &interface_actions, 1, &cb_func, &cb_data);
+	CHECK_NULL(actions, "Unable to build actions", NULL);
+	max_validate(actions);
+	CHECK_ERRORS_ST(actions, NULL);
+	CHECK_ERRORS_ST(stored_engine, NULL);
+	max_run_t *run;
+	if (cb_func == NULL) {
+		run = max_run_nonblock(stored_engine, actions);
+	} else {
+		run = max_run_nonblock_with_cb(stored_engine, actions, cb_func, cb_data);
+	}
+	CHECK_NULL(run, "Unable to run actions", NULL);
+	CHECK_ERRORS_ST(actions, NULL);
+	max_actions_free(actions);
+	return run;
+}
+
+void GaussianBlurDFE_run(
+	max_engine_t *engine,
+	GaussianBlurDFE_actions_t *interface_actions)
+{
+	max_run_t *run = GaussianBlurDFE_run_nonblock(engine, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+max_run_t *GaussianBlurDFE_run_nonblock(
+	max_engine_t *engine,
+	GaussianBlurDFE_actions_t *interface_actions)
+{
+	max_file_t *maxfile = max_engine_get_max_file(engine); 
+	void (*cb_func)(void*) = NULL;
+	void  *cb_data         = NULL;
+	max_actions_t *actions = GaussianBlurDFE_convert_internal(maxfile, interface_actions, 1, &cb_func, &cb_data);
+	CHECK_NULL(actions, "Unable to build actions", NULL);
+	max_validate(actions);
+	CHECK_ERRORS_ST(actions, NULL);
+	max_run_t *run;
+	if (cb_func == NULL) {
+		run = max_run_nonblock(engine, actions);
+	} else {
+		run = max_run_nonblock_with_cb(engine, actions, cb_func, cb_data);
+	}
+	CHECK_NULL(run, "Unable to run actions", NULL);
+	max_actions_free(actions);
+	return run;
+}
+
+
+/**
+ * \brief Group run advanced static function for the interface 'default'.
+ * 
+ * \param [in] group Group to use.
+ * \param [in,out] interface_actions Actions to run.
+ *
+ * Run the actions on the first device available in the group.
+ */
+void GaussianBlurDFE_run_group(max_group_t *group, GaussianBlurDFE_actions_t *interface_actions)
+{
+	max_run_t *run = GaussianBlurDFE_run_group_nonblock(group, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+
+/**
+ * \brief Group run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule the actions to run on the first device available in the group and return immediately.
+ * The status of the run must be checked with ::max_wait. 
+ * Note that use of ::max_nowait is prohibited with non-blocking running on groups:
+ * see the ::max_run_group_nonblock documentation for more explanation.
+ *
+ * \param [in] group Group to use.
+ * \param [in] interface_actions Actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *GaussianBlurDFE_run_group_nonblock(max_group_t *group, GaussianBlurDFE_actions_t *interface_actions)
+{
+	max_file_t *maxfile = max_group_get_max_file(group);
+	max_actions_t *actions = GaussianBlurDFE_convert_internal(maxfile, interface_actions, 1, NULL, NULL);
+	if(actions == NULL) return NULL;
+	if(!max_ok(actions->errors)) return NULL;
+	max_validate(actions);
+	max_run_t *run = max_run_group_nonblock(group, actions);
+	max_actions_free(actions);
+	return run;
+}
+
+
+/**
+ * \brief Array run advanced static function for the interface 'default'.
+ * 
+ * \param [in] engarray The array of devices to use.
+ * \param [in,out] interface_actions The array of actions to run.
+ *
+ * Run the array of actions on the array of engines.  The length of interface_actions
+ * must match the size of engarray.
+ */
+void GaussianBlurDFE_run_array(max_engarray_t *engarray, GaussianBlurDFE_actions_t *interface_actions[])
+{
+	max_run_t *run = GaussianBlurDFE_run_array_nonblock(engarray, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+
+/**
+ * \brief Array run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule to run the array of actions on the array of engines, and return immediately.
+ * The length of interface_actions must match the size of engarray.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * \param [in] engarray The array of devices to use.
+ * \param [in] interface_actions The array of actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *GaussianBlurDFE_run_array_nonblock(max_engarray_t *engarray, GaussianBlurDFE_actions_t *interface_actions[])
+{
+	max_file_t *maxfile = max_engarray_get_max_file(engarray, 0);
+	int i;
+	max_actarray_t *actarray = max_actarray_init(maxfile, engarray->size);
+	if (actarray == NULL) return NULL;
+	max_actions_t **arr_actions = malloc(engarray->size * sizeof(max_actions_t*));
+	for ( i = 0 ; i < actarray->size; i++ ) {
+		max_actions_t *actions = GaussianBlurDFE_convert_internal(maxfile, interface_actions[i], 1, NULL, NULL);
+		if (actions == NULL) return NULL;
+		arr_actions[i] = actions;
+		max_set_action(actarray, i, actions);
+	}
+	max_run_t *run = max_run_array_nonblock(engarray, actarray);
+	for ( i = 0 ; i < actarray->size ; i++ ) { max_actions_free(arr_actions[i]); }
+	max_actarray_free(actarray);
+	free(arr_actions);
+	return run;
+}
+
+
+/**
+ * \brief Converts a static-interface action struct into a dynamic-interface max_actions_t struct.
+ *
+ * Note that this is an internal utility function used by other functions in the static interface.
+ *
+ * \param [in] maxfile The maxfile to use.
+ * \param [in] interface_actions The interface-specific actions to run.
+ * \return The dynamic-interface actions to run, or NULL in case of error.
+ */
+max_actions_t* GaussianBlurDFE_convert(max_file_t *maxfile, GaussianBlurDFE_actions_t *interface_actions)
+{
+	return GaussianBlurDFE_convert_internal(maxfile, interface_actions, 0, NULL, NULL);
+}
+
+#undef CHECK_ERRORS_ST
+#undef CHECK_NULL
+
+
+
+#endif /* SLIC_USE_DEFINITIONS */
+
+#ifdef SLIC_DYNAMIC_CODE
+SLIC_MODE_START(default)	
+SLIC_MODE_END(default)
+
+#endif /* SLIC_DYNAMIC_CODE */
+
+#ifdef SKIN_META_DATA
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PG1h
+eGZpbGUgZm9ybWF0LXZlcnNpb249IjIwMTIwMjAwIiBoZWFkZXI9IkdhdXNzaWFuQmx1ckRGRS5o
+IiBuYW1lPSJHYXVzc2lhbkJsdXJERkUiPjxjb25zdGFudCBuYW1lPSJQQ0lFX0FMSUdOTUVOVCIg
+dHlwZT0ibG9uZyIgdmFsdWU9IjE2Ii8+PGNvbnN0YW50IG5hbWU9Im54TWF4IiB0eXBlPSJsb25n
+IiB2YWx1ZT0iODE5MiIvPjxlbmdpbmVtb2RlIG5hbWU9ImRlZmF1bHQiPjxmdW5jdGlvbiBuYW1l
+PSJHYXVzc2lhbkJsdXJERkUiIHJldHVybi12YWx1ZT0idm9pZCI+PHNjYWxhciBkZXNjPSJUaGUg
+bnVtYmVyIG9mIHRpY2tzIGZvciB3aGljaCBrZXJuZWwgJnF1b3Q7R2F1c3NpYW5CbHVyREZFS2Vy
+bmVsJnF1b3Q7IHdpbGwgcnVuLiIgZGlyZWN0aW9uPSJJbnB1dCIgbmFtZT0idGlja3NfR2F1c3Np
+YW5CbHVyREZFS2VybmVsIiB0eXBlPSJ1aW50NjRfdCIvPjxzY2FsYXIgZGVzYz0iSW5wdXQgc2Nh
+bGFyIHBhcmFtZXRlciAmcXVvdDtHYXVzc2lhbkJsdXJERkVLZXJuZWwuc2l6ZSZxdW90Oy4iIGRp
+cmVjdGlvbj0iSW5wdXQiIG5hbWU9Imluc2NhbGFyX0dhdXNzaWFuQmx1ckRGRUtlcm5lbF9zaXpl
+IiB0eXBlPSJ1aW50NjRfdCIvPjxzY2FsYXIgZGVzYz0iSW5wdXQgc2NhbGFyIHBhcmFtZXRlciAm
+cXVvdDtHYXVzc2lhbkJsdXJERkVLZXJuZWwudyZxdW90Oy4iIGRpcmVjdGlvbj0iSW5wdXQiIG5h
+bWU9Imluc2NhbGFyX0dhdXNzaWFuQmx1ckRGRUtlcm5lbF93IiB0eXBlPSJ1aW50NjRfdCIvPjxh
+cnJheSBkZXNjPSJTdHJlYW0gJnF1b3Q7eCZxdW90Oy4iIGRpcmVjdGlvbj0iSW5wdXQiIG5hbWU9
+Imluc3RyZWFtX3giIHNpemU9Imluc3RyZWFtX3NpemVfeCIgdHJhbnNwb3NlPSJmYWxzZSIgdHlw
+ZT0idm9pZCIvPjxzY2FsYXIgZGVzYz0iVGhlIHNpemUgb2YgdGhlIHN0cmVhbSBpbnN0cmVhbV94
+IGluIGJ5dGVzLiIgZGlyZWN0aW9uPSJJbnB1dCIgbmFtZT0iaW5zdHJlYW1fc2l6ZV94IiB0eXBl
+PSJ1aW50NjRfdCIvPjxhcnJheSBkZXNjPSJTdHJlYW0gJnF1b3Q7eSZxdW90Oy4iIGRpcmVjdGlv
+bj0iT3V0cHV0IiBuYW1lPSJvdXRzdHJlYW1feSIgc2l6ZT0ib3V0c3RyZWFtX3NpemVfeSIgdHJh
+bnNwb3NlPSJmYWxzZSIgdHlwZT0idm9pZCIvPjxzY2FsYXIgZGVzYz0iVGhlIHNpemUgb2YgdGhl
+IHN0cmVhbSBvdXRzdHJlYW1feSBpbiBieXRlcy4iIGRpcmVjdGlvbj0iSW5wdXQiIG5hbWU9Im91
+dHN0cmVhbV9zaXplX3kiIHR5cGU9InVpbnQ2NF90Ii8+PC9mdW5jdGlvbj48L2VuZ2luZW1vZGU+
+PC9tYXhmaWxlPg==
+#endif /* SKIN_META_DATA */
+
+#ifdef SLIC_B64_DEFINITIONS
+I2luY2x1ZGUgPHN0ZGlvLmg+CiNpbmNsdWRlIDxtYXRoLmg+CiNpbmNsdWRlIDxwdGhyZWFkLmg+
+CiNpbmNsdWRlIDxzdHJpbmcuaD4KI2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkbGli
+Lmg+CnN0YXRpYyBtYXhfZmlsZV90ICpzdG9yZWRfbWF4ZmlsZSA9IE5VTEw7CnN0YXRpYyBtYXhf
+ZW5naW5lX3QgKnN0b3JlZF9lbmdpbmUgPSBOVUxMOwpzdGF0aWMgY2hhciAqc3RvcmVkX2Vycm9y
+ID0gTlVMTDsKc3RhdGljIGludCBzdG9yZWRfaGFzX2Vycm9yID0gMDsKc3RhdGljIHB0aHJlYWRf
+b25jZV90IHNsaWNfYnNfaXNfaW5pdGlhbGlzZWQgPSBQVEhSRUFEX09OQ0VfSU5JVDsKCnN0YXRp
+YyB2b2lkIHNldF9lcnJvcihjb25zdCBjaGFyICplcnJvcl9zdHIpCnsKCXN0b3JlZF9oYXNfZXJy
+b3IgPSAxOyAKCWlmKHN0b3JlZF9lcnJvciA9PSBOVUxMKSB7CgkJc3RvcmVkX2Vycm9yID0gc3Ry
+ZHVwKGVycm9yX3N0cik7Cgl9IGVsc2UgewoJCWNoYXIgKm5lcnIgPSBtYWxsb2Moc3RybGVuKHN0
+b3JlZF9lcnJvcikgKyBzdHJsZW4oZXJyb3Jfc3RyKSArIDIpOwoJCXNwcmludGYobmVyciwgIiVz
+XG4lcyIsIHN0b3JlZF9lcnJvciwgZXJyb3Jfc3RyKTsKCQlmcmVlKHN0b3JlZF9lcnJvcik7CgkJ
+c3RvcmVkX2Vycm9yID0gbmVycjsKCX0KfQpzdGF0aWMgdm9pZCBzZXRfZXJyb3JfYW5kX2ZyZWUo
+Y2hhciAqZXJyb3Jfc3RyKXsKCXNldF9lcnJvcihlcnJvcl9zdHIpOwoJZnJlZShlcnJvcl9zdHIp
+Owp9CmludCBHYXVzc2lhbkJsdXJERkVfaGFzX2Vycm9ycyh2b2lkKQp7CXJldHVybiBzdG9yZWRf
+aGFzX2Vycm9yOyB9CmNvbnN0IGNoYXIqIEdhdXNzaWFuQmx1ckRGRV9nZXRfZXJyb3JzKHZvaWQp
+CnsJcmV0dXJuIHN0b3JlZF9lcnJvcjsgfQp2b2lkIEdhdXNzaWFuQmx1ckRGRV9jbGVhcl9lcnJv
+cnModm9pZCkKewoJZnJlZShzdG9yZWRfZXJyb3IpOwoJc3RvcmVkX2Vycm9yID0gTlVMTDsKCXN0
+b3JlZF9oYXNfZXJyb3IgPSAwOwp9CgpzdGF0aWMgY2hhciBHYXVzc2lhbkJsdXJERkVfdXNlX3Np
+bXVsYXRpb25bMTZdOwpzdGF0aWMgdm9pZCBHYXVzc2lhbkJsdXJERkVfZGVmX3VzZV9zaW11bGF0
+aW9uKHZvaWQpCnsKCWxvbmcgcGlkID0gKChsb25nKSBnZXRwaWQoKSkgJSAxMDAwMDA7CglzbnBy
+aW50ZihHYXVzc2lhbkJsdXJERkVfdXNlX3NpbXVsYXRpb24sIDE2LCAiR2F1c3NpYW5fJTA1bGRf
+IiwgcGlkKTsKfQpzdGF0aWMgY29uc3QgY2hhciAqR2F1c3NpYW5CbHVyREZFX2NoZWNrX3VzZV9z
+aW11bGF0aW9uKHZvaWQpCnsKCUdhdXNzaWFuQmx1ckRGRV9kZWZfdXNlX3NpbXVsYXRpb24oKTsK
+CWNvbnN0IGNoYXIgKnVzZV9zaW0gPSBtYXhfY29uZmlnX2dldF9zdHJpbmcoTUFYX0NPTkZJR19V
+U0VfU0lNVUxBVElPTik7CglpZiAodXNlX3NpbSA9PSBOVUxMKSB7CgkJdXNlX3NpbSA9IEdhdXNz
+aWFuQmx1ckRGRV91c2Vfc2ltdWxhdGlvbjsKCQltYXhfY29uZmlnX3NldF9zdHJpbmcoTUFYX0NP
+TkZJR19VU0VfU0lNVUxBVElPTiwgdXNlX3NpbSk7Cgl9CglyZXR1cm4gdXNlX3NpbTsKfQoKc3Rh
+dGljIGludCBHYXVzc2lhbkJsdXJERkVfc2ltdWxhdGlvbl9sYXVuY2ggPSAwOwppbnQgR2F1c3Np
+YW5CbHVyREZFX3NpbXVsYXRvcl9zdGFydCh2b2lkKQp7CglpbnQgcmV0dmFsID0gMDsKCWNvbnN0
+IGNoYXIgKnVzZV9zaW0gPSBHYXVzc2lhbkJsdXJERkVfY2hlY2tfdXNlX3NpbXVsYXRpb24oKTsK
+CWNoYXIgYnVmZlsxMDI0XTsKCXNucHJpbnRmKGJ1ZmYsIDEwMjQsICJQQVRIPXNpbXV0aWxzOiRQ
+QVRIIG1heGNvbXBpbGVyc2ltIC1kIDEgLW4gJXMgLWMgTUFYNUMgLVMgc2ltdXRpbHMgcmVzdGFy
+dCIsIHVzZV9zaW0pOwoJRklMRSAqcGlwZV9mcCA9IHBvcGVuKGJ1ZmYsICJyIik7CglpZiAocGlw
+ZV9mcCA9PSBOVUxMKSB7CgkJc3RybmNhdChidWZmLCAiIDogZmFpbGVkIHRvIGV4ZWN1dGUuIiwg
+KDEwMjQgLSBzdHJsZW4oYnVmZikpKTsKCQlzZXRfZXJyb3IoYnVmZik7CgkJcmV0dXJuIC0xOwoJ
+fQoJd2hpbGUgKGZnZXRzKGJ1ZmYsIDEwMjQsIHBpcGVfZnApICE9IE5VTEwpIHsKCQkvKiBVbmNv
+bW1lbnQgdGhpcyB0byBnZXQgc2ltdWxhdG9yIGNvbW1hbmQgb3V0cHV0ICovCgkJLyogZnByaW50
+ZihzdGRlcnIsIGJ1ZmYpOyAqLwoJCWlmIChzdHJzdHIoYnVmZiwgIkVycm9yIikpIHsKCQkJc2V0
+X2Vycm9yKGJ1ZmYpOwoJCQlyZXR2YWwgPSAtMTsKCQl9Cgl9CglwY2xvc2UocGlwZV9mcCk7Cgly
+ZXR1cm4gcmV0dmFsOwp9CgppbnQgR2F1c3NpYW5CbHVyREZFX3NpbXVsYXRvcl9zdG9wKHZvaWQp
+CnsKCWNvbnN0IGNoYXIgKnVzZV9zaW0gPSBHYXVzc2lhbkJsdXJERkVfY2hlY2tfdXNlX3NpbXVs
+YXRpb24oKTsKCWNoYXIgYnVmZlsxMDI0XTsKCXNucHJpbnRmKGJ1ZmYsIDEwMjQsICJQQVRIPXNp
+bXV0aWxzOiRQQVRIIG1heGNvbXBpbGVyc2ltIC1kIDEgLW4gJXMgLWMgTUFYNUMgLVMgc2ltdXRp
+bHMgc3RvcCIsIHVzZV9zaW0pOwoJRklMRSAqcGlwZV9mcCA9IHBvcGVuKGJ1ZmYsICJyIik7Cglp
+ZiAocGlwZV9mcCA9PSBOVUxMKSB7CgkJc3RybmNhdChidWZmLCAiIDogZmFpbGVkIHRvIGV4ZWN1
+dGUuIiwgKDEwMjQgLSBzdHJsZW4oYnVmZikpKTsKCQlzZXRfZXJyb3IoYnVmZik7CgkJcmV0dXJu
+IC0xOwoJfQoJd2hpbGUgKGZnZXRzKGJ1ZmYsIDEwMjQsIHBpcGVfZnApICE9IE5VTEwpIHsKCQkv
+KiBVbmNvbW1lbnQgdGhpcyB0byBnZXQgc2ltdWxhdG9yIGNvbW1hbmQgb3V0cHV0ICovCgkJLyog
+ZnByaW50ZihzdGRlcnIsIGJ1ZmYpOyAqLwoJCTsKCX0KCXBjbG9zZShwaXBlX2ZwKTsKCXJldHVy
+biAwOwp9CgpzdGF0aWMgdm9pZCBHYXVzc2lhbkJsdXJERkVfc3RhdGljX2luaXQodm9pZCkgCnsK
+CXN0b3JlZF9tYXhmaWxlID0gR2F1c3NpYW5CbHVyREZFX2luaXQoKTsKCWlmIChzdG9yZWRfbWF4
+ZmlsZSA9PSBOVUxMIHx8ICFtYXhfb2soc3RvcmVkX21heGZpbGUtPmVycm9ycykpIHsKCQlzdG9y
+ZWRfbWF4ZmlsZSA9IE5VTEw7CgkJaWYobWF4X2NvbmZpZ19nZXRfYm9vbChNQVhfQ09ORklHX1NU
+QVRJQ19JTlRFUkZBQ0VfQUJPUlRfT05fRVJST1IpKSBhYm9ydCgpOwoJCWVsc2UgeyBzZXRfZXJy
+b3IoIlVuYWJsZSB0byBsb2FkIG1heGZpbGUiKTsgcmV0dXJuOyB9Cgl9CglpZighbWF4X29rKG1h
+eF9nbG9iYWxfZXJyb3JzKCkpKSB7CgkJc2V0X2Vycm9yX2FuZF9mcmVlKG1heF9lcnJvcnNfdHJh
+Y2UobWF4X2dsb2JhbF9lcnJvcnMoKSkpOwoJCXJldHVybjsKCX0KCWlmKCFtYXhfY29uZmlnX2dl
+dF9ib29sKE1BWF9DT05GSUdfU1RBVElDX0lOVEVSRkFDRV9BQk9SVF9PTl9FUlJPUikpCgkJbWF4
+X2Vycm9yc19tb2RlKHN0b3JlZF9tYXhmaWxlLT5lcnJvcnMsIDApOwoJdGltZV90IHRpbWVvdXRf
+cHJldmlvdXMgPSBtYXhfbG9hZF90aW1lb3V0KHN0b3JlZF9tYXhmaWxlLCAzMCk7Cgljb25zdCBj
+aGFyICp1c2Vfc2ltID0gR2F1c3NpYW5CbHVyREZFX2NoZWNrX3VzZV9zaW11bGF0aW9uKCk7Cglp
+ZiAobWF4X3BpbmdfZGFlbW9uKHN0b3JlZF9tYXhmaWxlLCB1c2Vfc2ltKSA9PSAwKSB7CgkJaW50
+IHNpbV9zdGF0ID0gR2F1c3NpYW5CbHVyREZFX3NpbXVsYXRvcl9zdGFydCgpOwoJCWlmICgoc2lt
+X3N0YXQgPT0gMCkgJiYgKG1heF9waW5nX2RhZW1vbihzdG9yZWRfbWF4ZmlsZSwgdXNlX3NpbSkg
+PT0gMSkpIHsKCQkJR2F1c3NpYW5CbHVyREZFX3NpbXVsYXRpb25fbGF1bmNoID0gMTsKCQl9IGVs
+c2UgewoJCQlzZXRfZXJyb3IoIkVycm9yOiBBbiBlcnJvciBvY2N1cnJlZCB3aGlsZSB0cnlpbmcg
+dG8gc3RhcnQgdGhlIHNpbXVsYXRpb24gaW5mcmFzdHJ1Y3R1cmUgYXV0b21hdGljYWxseS4iKTsK
+CQkJc2V0X2Vycm9yKCJFcnJvcjogQ2hlY2sgdGhhdCAndXNlX3NpbXVsYXRpb249PHNpbXVsYXRv
+cl9uYW1lPicgaXMgc2V0IGNvcnJlY3RseSBpbiB5b3VyIFNMaUMgY29uZmlndXJhdGlvbiIpOwoJ
+CQlzZXRfZXJyb3IoIkVycm9yOiBhbmQgdGhhdCB0aGUgYXNzb2NpYXRlZCBzaW11bGF0ZWQgc3lz
+dGVtIGRhZW1vbiBpcyBydW5uaW5nLiIpOwoJCQltYXhfZmlsZV9mcmVlKHN0b3JlZF9tYXhmaWxl
+KTsKCQkJc3RvcmVkX21heGZpbGUgPSBOVUxMOwoJCQlyZXR1cm47CgkJfQoJfQoJc3RvcmVkX2Vu
+Z2luZSA9IG1heF9sb2FkKHN0b3JlZF9tYXhmaWxlLCAiKiIpOwoJaWYgKCFtYXhfb2soc3RvcmVk
+X21heGZpbGUtPmVycm9ycykpIHsKCQlpZihtYXhfY29uZmlnX2dldF9ib29sKE1BWF9DT05GSUdf
+U1RBVElDX0lOVEVSRkFDRV9BQk9SVF9PTl9FUlJPUikpIHsKCQkJZnByaW50ZihzdGRlcnIsICJc
+blVuYWJsZSB0byBsb2FkIGVuZ2luZTogYWJvcnRpbmcgbm93LlxuXG4iKTsKCQkJZmZsdXNoKHN0
+ZGVycik7CgkJCWFib3J0KCk7CgkJfSBlbHNlIHsKCQkJc2V0X2Vycm9yX2FuZF9mcmVlKG1heF9l
+cnJvcnNfdHJhY2Uoc3RvcmVkX21heGZpbGUtPmVycm9ycykpOwoJCQltYXhfZmlsZV9mcmVlKHN0
+b3JlZF9tYXhmaWxlKTsKCQkJc3RvcmVkX21heGZpbGUgPSBOVUxMOwoJCQlyZXR1cm47CgkJfSAK
+CX0gCgltYXhfbG9hZF90aW1lb3V0KHN0b3JlZF9tYXhmaWxlLCB0aW1lb3V0X3ByZXZpb3VzKTsK
+fQp2b2lkIEdhdXNzaWFuQmx1ckRGRV9mcmVlKHZvaWQpCnsKCWlmIChzdG9yZWRfZW5naW5lICE9
+IE5VTEwpIHsKCQltYXhfdW5sb2FkKHN0b3JlZF9lbmdpbmUpOwoJCXN0b3JlZF9lbmdpbmUgPSBO
+VUxMOwoJfQoJaWYgKHN0b3JlZF9tYXhmaWxlICE9IE5VTEwpIHsKCQltYXhfZmlsZV9mcmVlKHN0
+b3JlZF9tYXhmaWxlKTsKCQlzdG9yZWRfbWF4ZmlsZSA9IE5VTEw7Cgl9CglpZiAoc3RvcmVkX2Vy
+cm9yICE9IE5VTEwpIHsKCQlmcmVlKHN0b3JlZF9lcnJvcik7CgkJc3RvcmVkX2Vycm9yID0gTlVM
+TDsKCX0KCWlmIChHYXVzc2lhbkJsdXJERkVfc2ltdWxhdGlvbl9sYXVuY2ggPT0gMSkgewoJCWlu
+dCBzaW1fc3RhdCA9IEdhdXNzaWFuQmx1ckRGRV9zaW11bGF0b3Jfc3RvcCgpOwoJCWlmIChzaW1f
+c3RhdCAhPSAwICkgewoJCQlmcHJpbnRmKHN0ZGVyciwgIkVycm9yIHN0b3BwaW5nIHNpbXVsYXRv
+ci4iKTsKCQl9CgkJR2F1c3NpYW5CbHVyREZFX3NpbXVsYXRpb25fbGF1bmNoID0gMDsKCX0KfQoK
+c3RhdGljIGludCBHYXVzc2lhbkJsdXJERkVfZ2V0X3BjaWVfYWxpZ25tZW50KHZvaWQpCnsKI2lm
+ZGVmIEdhdXNzaWFuQmx1ckRGRV9QQ0lFX0FMSUdOTUVOVAoJcmV0dXJuICgoR2F1c3NpYW5CbHVy
+REZFX1BDSUVfQUxJR05NRU5UIDwgMSkgPyAxNiA6IEdhdXNzaWFuQmx1ckRGRV9QQ0lFX0FMSUdO
+TUVOVCk7CiNlbHNlCglyZXR1cm4gMTY7CiNlbmRpZgp9CgpzdGF0aWMgaW50IEdhdXNzaWFuQmx1
+ckRGRV9jaGVja19hbGlnbmVkKGNvbnN0IHZvaWQgKmRhdGEpCnsKCXVpbnRwdHJfdCBwb2ludGVy
+ID0gKHVpbnRwdHJfdCkgZGF0YTsKCWludCBhbGlnbm1lbnQgPSBHYXVzc2lhbkJsdXJERkVfZ2V0
+X3BjaWVfYWxpZ25tZW50KCk7CglyZXR1cm4gKHBvaW50ZXIgJSBhbGlnbm1lbnQpID8gMSA6IDA7
+Cn0KCnN0YXRpYyB2b2lkICpHYXVzc2lhbkJsdXJERkVfbWFsbG9jX2FsaWduZWQoY29uc3Qgc2l6
+ZV90IHNpemUpCnsKCXZvaWQgKnB0cjsKCWludCBhbGlnbm1lbnQgPSBHYXVzc2lhbkJsdXJERkVf
+Z2V0X3BjaWVfYWxpZ25tZW50KCk7Cglwb3NpeF9tZW1hbGlnbigmcHRyLCBhbGlnbm1lbnQsIHNp
+emUpOwoJcmV0dXJuIHB0cjsKfQoKCgovKi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0qLwovKi0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0gSW50ZXJmYWNlIGRlZmF1bHQgLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0qLwovKi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0qLwoKCgojZGVmaW5lIENIRUNLX0VS
+Uk9SU19TVChTVCwgUkVUKSBpZighbWF4X29rKFNULT5lcnJvcnMpKSB7IGlmKG1heF9jb25maWdf
+Z2V0X2Jvb2woTUFYX0NPTkZJR19TVEFUSUNfSU5URVJGQUNFX0FCT1JUX09OX0VSUk9SKSkgeyBm
+cHJpbnRmKHN0ZGVyciwgIiVzXG4iLCBtYXhfZXJyb3JzX3RyYWNlKFNULT5lcnJvcnMpKTsgYWJv
+cnQoKTsgfSBzZXRfZXJyb3JfYW5kX2ZyZWUobWF4X2Vycm9yc190cmFjZShTVC0+ZXJyb3JzKSk7
+IHJldHVybiBSRVQ7IH0gCiNkZWZpbmUgQ0hFQ0tfTlVMTChWQUxVRSwgTUVTU0FHRSwgUkVUKSBp
+ZihWQUxVRSA9PSBOVUxMKSB7IGlmIChtYXhfY29uZmlnX2dldF9ib29sKE1BWF9DT05GSUdfU1RB
+VElDX0lOVEVSRkFDRV9BQk9SVF9PTl9FUlJPUikpIHsgZnByaW50ZihzdGRlcnIsICIlc1xuJXNc
+biIsIChzdG9yZWRfZXJyb3IgPT0gTlVMTCkgPyAiIiA6IHN0b3JlZF9lcnJvciwgTUVTU0FHRSk7
+IGFib3J0KCk7IH0gc2V0X2Vycm9yKE1FU1NBR0UpOyByZXR1cm4gUkVUOyB9CgogCnR5cGVkZWYg
+c3RydWN0IEdhdXNzaWFuQmx1ckRGRV9jYWxsYmFja19zdHJlYW0gewoJdWludDhfdCAqdXNlcl9w
+dHI7Cgl1aW50OF90ICphbGlnbmVkX3B0cjsKCXNpemVfdCAgIHNpemU7CglpbnQgICAgICBpc19v
+dXRwdXQ7Cn0gR2F1c3NpYW5CbHVyREZFX2NhbGxiYWNrX3N0cmVhbV90OwoKdHlwZWRlZiBzdHJ1
+Y3QgR2F1c3NpYW5CbHVyREZFX2NhbGxiYWNrX2RhdGEgewoJR2F1c3NpYW5CbHVyREZFX2NhbGxi
+YWNrX3N0cmVhbV90IHN0cmVhbVsyXTsgCglpbnQgY291bnQ7CglpbnQgbWF4X2NvdW50Owp9IEdh
+dXNzaWFuQmx1ckRGRV9jYWxsYmFja19kYXRhX3Q7CgpzdGF0aWMgdm9pZCBHYXVzc2lhbkJsdXJE
+RkVfY2FsbGJhY2tfaW50ZXJuYWwodm9pZCAqY2JfZGF0YSkKewoJR2F1c3NpYW5CbHVyREZFX2Nh
+bGxiYWNrX2RhdGFfdCAqZGF0YSA9IChHYXVzc2lhbkJsdXJERkVfY2FsbGJhY2tfZGF0YV90Kikg
+Y2JfZGF0YTsKCWZvciAoaW50IGkgPSAwIDsgaSA8IGRhdGEtPmNvdW50IDsgaSsrICkgewoJCUdh
+dXNzaWFuQmx1ckRGRV9jYWxsYmFja19zdHJlYW1fdCAqcyA9ICZkYXRhLT5zdHJlYW1baV07CgkJ
+aWYgKHMtPmlzX291dHB1dCAmJiAocy0+c2l6ZSA+IDApKSB7CgkJCW1lbWNweShzLT51c2VyX3B0
+ciwgcy0+YWxpZ25lZF9wdHIsIHMtPnNpemUpOwoJCX0KCQlmcmVlKHMtPmFsaWduZWRfcHRyKTsK
+CX0KCWZyZWUoZGF0YSk7Cn0KCnN0YXRpYyBtYXhfYWN0aW9uc190KiBHYXVzc2lhbkJsdXJERkVf
+Y29udmVydF9pbnRlcm5hbCgKCW1heF9maWxlX3QgKm1heGZpbGUsCglHYXVzc2lhbkJsdXJERkVf
+YWN0aW9uc190ICppbnRlcmZhY2VfYWN0aW9ucywKCWludCAgaXNfaW50ZXJuYWxfY2FsbCwKCXZv
+aWQgKCoqY2FsbGJhY2tfZnVuYykodm9pZCopLAoJdm9pZCAqKmNhbGxiYWNrX2RhdGEpCnsKCW1h
+eF9hY3Rpb25zX3QgKmFjdGlvbnMgPSBtYXhfYWN0aW9uc19pbml0KG1heGZpbGUsIE5VTEwpOwoJ
+aWYoYWN0aW9ucyA9PSBOVUxMKSByZXR1cm4gTlVMTDsKCiNkZWZpbmUgQ0hFQ0tfRVJST1JTIGlm
+KCFtYXhfb2soYWN0aW9ucy0+ZXJyb3JzKSkgeyBzZXRfZXJyb3JfYW5kX2ZyZWUobWF4X2Vycm9y
+c190cmFjZShhY3Rpb25zLT5lcnJvcnMpKTsgcmV0dXJuIE5VTEw7IH0gCgoJR2F1c3NpYW5CbHVy
+REZFX2NhbGxiYWNrX2RhdGFfdCAqY2JfZGF0YSA9IE5VTEw7CglpbnQgdXNlX2NhbGxiYWNrID0g
+KGNhbGxiYWNrX2Z1bmMgIT0gTlVMTCkgJiYgKGNhbGxiYWNrX2RhdGEgIT0gTlVMTCk7CglpZiAo
+dXNlX2NhbGxiYWNrKSB7CgkJY2JfZGF0YSA9IG1hbGxvYyhzaXplb2YoR2F1c3NpYW5CbHVyREZF
+X2NhbGxiYWNrX2RhdGFfdCkpOwoJCWlmIChjYl9kYXRhID09IE5VTEwpIHsKCQkJZnByaW50Zihz
+dGRlcnIsICJVbmFibGUgdG8gYWxsb2NhdGUgbWVtb3J5IGZvciBzdHJlYW0gY2FsbGJhY2sgZGF0
+YSBpbiBmdW5jdGlvbiBHYXVzc2lhbkJsdXJERkVfY29udmVydF9pbnRlcm5hbFxuIik7CgkJCXJl
+dHVybiBOVUxMOwoJCX0KCQljYl9kYXRhLT5tYXhfY291bnQgPSAyOwoJCWNiX2RhdGEtPmNvdW50
+ICAgICA9IDA7CgkJKmNhbGxiYWNrX2RhdGEgICAgID0gY2JfZGF0YTsKCQkqY2FsbGJhY2tfZnVu
+YyAgICAgPSAmR2F1c3NpYW5CbHVyREZFX2NhbGxiYWNrX2ludGVybmFsOwoJfQoKCS8qIGNvZGUg
+Zm9yIHNjYWxhciBHYXVzc2lhbkJsdXJERkVLZXJuZWwucnVuX2N5Y2xlX2NvdW50ICovCgl1aW50
+NjRfdCB0aWNrc19HYXVzc2lhbkJsdXJERkVLZXJuZWwgPSBpbnRlcmZhY2VfYWN0aW9ucy0+dGlj
+a3NfR2F1c3NpYW5CbHVyREZFS2VybmVsOwoJbWF4X3NldF90aWNrcyhhY3Rpb25zLCAiR2F1c3Np
+YW5CbHVyREZFS2VybmVsIiwgdGlja3NfR2F1c3NpYW5CbHVyREZFS2VybmVsKTsKCUNIRUNLX0VS
+Uk9SUzsKCS8qIGVuZCBvZiBjb2RlIGZvciBzY2FsYXIgR2F1c3NpYW5CbHVyREZFS2VybmVsLnJ1
+bl9jeWNsZV9jb3VudCovCgkKCS8qIGNvZGUgZm9yIHNjYWxhciBHYXVzc2lhbkJsdXJERkVLZXJu
+ZWwuc2l6ZSAqLwoJdWludDY0X3QgaW5zY2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3NpemUg
+PSBpbnRlcmZhY2VfYWN0aW9ucy0+aW5zY2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3NpemU7
+CgltYXhfc2V0X3VpbnQ2NHQoYWN0aW9ucywgIkdhdXNzaWFuQmx1ckRGRUtlcm5lbCIsICJzaXpl
+IiwgaW5zY2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3NpemUpOwoJQ0hFQ0tfRVJST1JTOwoJ
+LyogZW5kIG9mIGNvZGUgZm9yIHNjYWxhciBHYXVzc2lhbkJsdXJERkVLZXJuZWwuc2l6ZSovCgkK
+CS8qIGNvZGUgZm9yIHNjYWxhciBHYXVzc2lhbkJsdXJERkVLZXJuZWwudyAqLwoJdWludDY0X3Qg
+aW5zY2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3cgPSBpbnRlcmZhY2VfYWN0aW9ucy0+aW5z
+Y2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3c7CgltYXhfc2V0X3VpbnQ2NHQoYWN0aW9ucywg
+IkdhdXNzaWFuQmx1ckRGRUtlcm5lbCIsICJ3IiwgaW5zY2FsYXJfR2F1c3NpYW5CbHVyREZFS2Vy
+bmVsX3cpOwoJQ0hFQ0tfRVJST1JTOwoJLyogZW5kIG9mIGNvZGUgZm9yIHNjYWxhciBHYXVzc2lh
+bkJsdXJERkVLZXJuZWwudyovCgkKCS8qIGNvZGUgZm9yIHN0cmVhbSB4ICovCglzaXplX3QgaW5z
+dHJlYW1fc2l6ZV94ID0gaW50ZXJmYWNlX2FjdGlvbnMtPmluc3RyZWFtX3NpemVfeDsKCWlmIChp
+bnN0cmVhbV9zaXplX3ggPiAwKSB7CgkJY29uc3Qgdm9pZCAqc3RyZWFtX3B0ciA9IGludGVyZmFj
+ZV9hY3Rpb25zLT5pbnN0cmVhbV94OwoJCWlmICh1c2VfY2FsbGJhY2sgJiYgKDEgPT0gR2F1c3Np
+YW5CbHVyREZFX2NoZWNrX2FsaWduZWQoaW50ZXJmYWNlX2FjdGlvbnMtPmluc3RyZWFtX3gpKSkg
+ewoJCQl2b2lkICphbGlnbmVkX2luc3RyZWFtX3ggPSBtYWxsb2MoaW5zdHJlYW1fc2l6ZV94KTsK
+CQkJaWYgKGFsaWduZWRfaW5zdHJlYW1feCA9PSBOVUxMKSB7CgkJCQljaGFyIGVycm9yX21zZ1sy
+NTZdOwoJCQkJc25wcmludGYoZXJyb3JfbXNnLCBzaXplb2YoZXJyb3JfbXNnKSAvIHNpemVvZihj
+aGFyKSwKCQkJCQkJIkZhaWxlZCB0byBhbGxvY2F0ZSAlenUgYnl0ZXMgb2YgbWVtb3J5IGZvciBz
+dHJlYW0geC4iLAoJCQkJCQlpbnN0cmVhbV9zaXplX3gpOwoJCQkJbWF4X3JlcG9ydF9lcnJvcl9z
+bGljKGFjdGlvbnMtPmVycm9ycywgX19GSUxFX18sIF9fTElORV9fLCA1MjYsIGVycm9yX21zZyk7
+CgkJCQlDSEVDS19FUlJPUlM7CgkJCX0KCQkJKCZjYl9kYXRhLT5zdHJlYW1bY2JfZGF0YS0+Y291
+bnRdKS0+dXNlcl9wdHIgICAgPSAodWludDhfdCopIGludGVyZmFjZV9hY3Rpb25zLT5pbnN0cmVh
+bV94OwoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5hbGlnbmVkX3B0ciA9
+ICh1aW50OF90KikgYWxpZ25lZF9pbnN0cmVhbV94OwoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9k
+YXRhLT5jb3VudF0pLT5zaXplICAgICAgICA9IGluc3RyZWFtX3NpemVfeDsKCQkJKCZjYl9kYXRh
+LT5zdHJlYW1bY2JfZGF0YS0+Y291bnRdKS0+aXNfb3V0cHV0ICAgPSAwOwoJCQljYl9kYXRhLT5j
+b3VudCArPSAxOwoJCQltZW1jcHkoYWxpZ25lZF9pbnN0cmVhbV94LCBpbnRlcmZhY2VfYWN0aW9u
+cy0+aW5zdHJlYW1feCwgaW5zdHJlYW1fc2l6ZV94KTsKCQkJc3RyZWFtX3B0ciA9IGFsaWduZWRf
+aW5zdHJlYW1feDsKCQl9CgkJbWF4X3F1ZXVlX2lucHV0KGFjdGlvbnMsICJ4Iiwgc3RyZWFtX3B0
+ciwgaW5zdHJlYW1fc2l6ZV94KTsKCQlDSEVDS19FUlJPUlM7Cgl9CgkvKiBlbmQgb2YgY29kZSBm
+b3Igc3RyZWFtIHggKi8KCQoJLyogY29kZSBmb3Igc3RyZWFtIHkgKi8KCXNpemVfdCBvdXRzdHJl
+YW1fc2l6ZV95ID0gaW50ZXJmYWNlX2FjdGlvbnMtPm91dHN0cmVhbV9zaXplX3k7CglpZiAob3V0
+c3RyZWFtX3NpemVfeSA+IDApIHsKCQl2b2lkICpzdHJlYW1fcHRyID0gaW50ZXJmYWNlX2FjdGlv
+bnMtPm91dHN0cmVhbV95OwoJCWlmICh1c2VfY2FsbGJhY2sgJiYgKDEgPT0gR2F1c3NpYW5CbHVy
+REZFX2NoZWNrX2FsaWduZWQoaW50ZXJmYWNlX2FjdGlvbnMtPm91dHN0cmVhbV95KSkpIHsKCQkJ
+dm9pZCAqYWxpZ25lZF9vdXRzdHJlYW1feSA9IG1hbGxvYyhvdXRzdHJlYW1fc2l6ZV95KTsKCQkJ
+aWYgKGFsaWduZWRfb3V0c3RyZWFtX3kgPT0gTlVMTCkgewoJCQkJY2hhciBlcnJvcl9tc2dbMjU2
+XTsKCQkJCXNucHJpbnRmKGVycm9yX21zZywgc2l6ZW9mKGVycm9yX21zZykgLyBzaXplb2YoY2hh
+ciksCgkJCQkJCSJGYWlsZWQgdG8gYWxsb2NhdGUgJXp1IGJ5dGVzIG9mIG1lbW9yeSBmb3Igc3Ry
+ZWFtIHkuIiwKCQkJCQkJb3V0c3RyZWFtX3NpemVfeSk7CgkJCQltYXhfcmVwb3J0X2Vycm9yX3Ns
+aWMoYWN0aW9ucy0+ZXJyb3JzLCBfX0ZJTEVfXywgX19MSU5FX18sIDUyNiwgZXJyb3JfbXNnKTsK
+CQkJCUNIRUNLX0VSUk9SUzsKCQkJfQoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3Vu
+dF0pLT51c2VyX3B0ciAgICA9ICh1aW50OF90KikgaW50ZXJmYWNlX2FjdGlvbnMtPm91dHN0cmVh
+bV95OwoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5hbGlnbmVkX3B0ciA9
+ICh1aW50OF90KikgYWxpZ25lZF9vdXRzdHJlYW1feTsKCQkJKCZjYl9kYXRhLT5zdHJlYW1bY2Jf
+ZGF0YS0+Y291bnRdKS0+c2l6ZSAgICAgICAgPSBvdXRzdHJlYW1fc2l6ZV95OwoJCQkoJmNiX2Rh
+dGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5pc19vdXRwdXQgICA9IDE7CgkJCWNiX2RhdGEt
+PmNvdW50ICs9IDE7CgkJCXN0cmVhbV9wdHIgPSBhbGlnbmVkX291dHN0cmVhbV95OwoJCX0KCQlt
+YXhfcXVldWVfb3V0cHV0KGFjdGlvbnMsICJ5Iiwgc3RyZWFtX3B0ciwgb3V0c3RyZWFtX3NpemVf
+eSk7CgkJQ0hFQ0tfRVJST1JTOwoJfQoJLyogZW5kIG9mIGNvZGUgZm9yIHN0cmVhbSB5ICovCgkK
+CWlmICh1c2VfY2FsbGJhY2sgJiYgY2JfZGF0YS0+Y291bnQgPT0gMCkgewoJCSpjYWxsYmFja19k
+YXRhID0gTlVMTDsKCQkqY2FsbGJhY2tfZnVuYyA9IE5VTEw7CgkJZnJlZShjYl9kYXRhKTsKCX0K
+CXJldHVybiBhY3Rpb25zOwojdW5kZWYgQ0hFQ0tfRVJST1JTCn0KCnZvaWQgR2F1c3NpYW5CbHVy
+REZFKAoJdWludDY0X3QgdGlja3NfR2F1c3NpYW5CbHVyREZFS2VybmVsLAoJdWludDY0X3QgaW5z
+Y2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3NpemUsCgl1aW50NjRfdCBpbnNjYWxhcl9HYXVz
+c2lhbkJsdXJERkVLZXJuZWxfdywKCWNvbnN0IHZvaWQgKmluc3RyZWFtX3gsCglzaXplX3QgaW5z
+dHJlYW1fc2l6ZV94LAoJdm9pZCAqb3V0c3RyZWFtX3ksCglzaXplX3Qgb3V0c3RyZWFtX3NpemVf
+eSkKewoJKHZvaWQpIHB0aHJlYWRfb25jZSgmc2xpY19ic19pc19pbml0aWFsaXNlZCwgR2F1c3Np
+YW5CbHVyREZFX3N0YXRpY19pbml0KTsKCUNIRUNLX05VTEwoc3RvcmVkX21heGZpbGUsICJNYXhm
+aWxlIHdhcyBub3QgbG9hZGVkIiwgKTsKCW1heF9ydW5fdCAqcnVuID0gR2F1c3NpYW5CbHVyREZF
+X25vbmJsb2NrKHRpY2tzX0dhdXNzaWFuQmx1ckRGRUtlcm5lbCwgaW5zY2FsYXJfR2F1c3NpYW5C
+bHVyREZFS2VybmVsX3NpemUsIGluc2NhbGFyX0dhdXNzaWFuQmx1ckRGRUtlcm5lbF93LCBpbnN0
+cmVhbV94LCBpbnN0cmVhbV9zaXplX3gsIG91dHN0cmVhbV95LCBvdXRzdHJlYW1fc2l6ZV95KTsK
+CUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1biBhY3Rpb25zIiwgKTsKCW1heF93YWl0KHJ1
+bik7Cn0KCm1heF9ydW5fdCAqR2F1c3NpYW5CbHVyREZFX25vbmJsb2NrKAoJdWludDY0X3QgdGlj
+a3NfR2F1c3NpYW5CbHVyREZFS2VybmVsLAoJdWludDY0X3QgaW5zY2FsYXJfR2F1c3NpYW5CbHVy
+REZFS2VybmVsX3NpemUsCgl1aW50NjRfdCBpbnNjYWxhcl9HYXVzc2lhbkJsdXJERkVLZXJuZWxf
+dywKCWNvbnN0IHZvaWQgKmluc3RyZWFtX3gsCglzaXplX3QgaW5zdHJlYW1fc2l6ZV94LAoJdm9p
+ZCAqb3V0c3RyZWFtX3ksCglzaXplX3Qgb3V0c3RyZWFtX3NpemVfeSkKewoJR2F1c3NpYW5CbHVy
+REZFX2FjdGlvbnNfdCBpbnRlcmZhY2VfYWN0aW9uczsKCWludGVyZmFjZV9hY3Rpb25zLnRpY2tz
+X0dhdXNzaWFuQmx1ckRGRUtlcm5lbCA9IHRpY2tzX0dhdXNzaWFuQmx1ckRGRUtlcm5lbDsKCWlu
+dGVyZmFjZV9hY3Rpb25zLmluc2NhbGFyX0dhdXNzaWFuQmx1ckRGRUtlcm5lbF9zaXplID0gaW5z
+Y2FsYXJfR2F1c3NpYW5CbHVyREZFS2VybmVsX3NpemU7CglpbnRlcmZhY2VfYWN0aW9ucy5pbnNj
+YWxhcl9HYXVzc2lhbkJsdXJERkVLZXJuZWxfdyA9IGluc2NhbGFyX0dhdXNzaWFuQmx1ckRGRUtl
+cm5lbF93OwoJaW50ZXJmYWNlX2FjdGlvbnMuaW5zdHJlYW1feCA9IGluc3RyZWFtX3g7CglpbnRl
+cmZhY2VfYWN0aW9ucy5pbnN0cmVhbV9zaXplX3ggPSBpbnN0cmVhbV9zaXplX3g7CglpbnRlcmZh
+Y2VfYWN0aW9ucy5vdXRzdHJlYW1feSA9IG91dHN0cmVhbV95OwoJaW50ZXJmYWNlX2FjdGlvbnMu
+b3V0c3RyZWFtX3NpemVfeSA9IG91dHN0cmVhbV9zaXplX3k7Cgkodm9pZCkgcHRocmVhZF9vbmNl
+KCZzbGljX2JzX2lzX2luaXRpYWxpc2VkLCBHYXVzc2lhbkJsdXJERkVfc3RhdGljX2luaXQpOwoJ
+Q0hFQ0tfTlVMTChzdG9yZWRfbWF4ZmlsZSwgIk1heGZpbGUgd2FzIG5vdCBsb2FkZWQiLCBOVUxM
+KTsKCXZvaWQgKCpjYl9mdW5jKSh2b2lkKikgPSBOVUxMOwoJdm9pZCAgKmNiX2RhdGEgICAgICAg
+ICA9IE5VTEw7CgltYXhfYWN0aW9uc190ICphY3Rpb25zID0gR2F1c3NpYW5CbHVyREZFX2NvbnZl
+cnRfaW50ZXJuYWwoc3RvcmVkX21heGZpbGUsICZpbnRlcmZhY2VfYWN0aW9ucywgMSwgJmNiX2Z1
+bmMsICZjYl9kYXRhKTsKCUNIRUNLX05VTEwoYWN0aW9ucywgIlVuYWJsZSB0byBidWlsZCBhY3Rp
+b25zIiwgTlVMTCk7CgltYXhfdmFsaWRhdGUoYWN0aW9ucyk7CglDSEVDS19FUlJPUlNfU1QoYWN0
+aW9ucywgTlVMTCk7CglDSEVDS19FUlJPUlNfU1Qoc3RvcmVkX2VuZ2luZSwgTlVMTCk7CgltYXhf
+cnVuX3QgKnJ1bjsKCWlmIChjYl9mdW5jID09IE5VTEwpIHsKCQlydW4gPSBtYXhfcnVuX25vbmJs
+b2NrKHN0b3JlZF9lbmdpbmUsIGFjdGlvbnMpOwoJfSBlbHNlIHsKCQlydW4gPSBtYXhfcnVuX25v
+bmJsb2NrX3dpdGhfY2Ioc3RvcmVkX2VuZ2luZSwgYWN0aW9ucywgY2JfZnVuYywgY2JfZGF0YSk7
+Cgl9CglDSEVDS19OVUxMKHJ1biwgIlVuYWJsZSB0byBydW4gYWN0aW9ucyIsIE5VTEwpOwoJQ0hF
+Q0tfRVJST1JTX1NUKGFjdGlvbnMsIE5VTEwpOwoJbWF4X2FjdGlvbnNfZnJlZShhY3Rpb25zKTsK
+CXJldHVybiBydW47Cn0KCnZvaWQgR2F1c3NpYW5CbHVyREZFX3J1bigKCW1heF9lbmdpbmVfdCAq
+ZW5naW5lLAoJR2F1c3NpYW5CbHVyREZFX2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlvbnMpCnsK
+CW1heF9ydW5fdCAqcnVuID0gR2F1c3NpYW5CbHVyREZFX3J1bl9ub25ibG9jayhlbmdpbmUsIGlu
+dGVyZmFjZV9hY3Rpb25zKTsKCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1biBhY3Rpb25z
+IiwgKTsKCW1heF93YWl0KHJ1bik7Cn0KCm1heF9ydW5fdCAqR2F1c3NpYW5CbHVyREZFX3J1bl9u
+b25ibG9jaygKCW1heF9lbmdpbmVfdCAqZW5naW5lLAoJR2F1c3NpYW5CbHVyREZFX2FjdGlvbnNf
+dCAqaW50ZXJmYWNlX2FjdGlvbnMpCnsKCW1heF9maWxlX3QgKm1heGZpbGUgPSBtYXhfZW5naW5l
+X2dldF9tYXhfZmlsZShlbmdpbmUpOyAKCXZvaWQgKCpjYl9mdW5jKSh2b2lkKikgPSBOVUxMOwoJ
+dm9pZCAgKmNiX2RhdGEgICAgICAgICA9IE5VTEw7CgltYXhfYWN0aW9uc190ICphY3Rpb25zID0g
+R2F1c3NpYW5CbHVyREZFX2NvbnZlcnRfaW50ZXJuYWwobWF4ZmlsZSwgaW50ZXJmYWNlX2FjdGlv
+bnMsIDEsICZjYl9mdW5jLCAmY2JfZGF0YSk7CglDSEVDS19OVUxMKGFjdGlvbnMsICJVbmFibGUg
+dG8gYnVpbGQgYWN0aW9ucyIsIE5VTEwpOwoJbWF4X3ZhbGlkYXRlKGFjdGlvbnMpOwoJQ0hFQ0tf
+RVJST1JTX1NUKGFjdGlvbnMsIE5VTEwpOwoJbWF4X3J1bl90ICpydW47CglpZiAoY2JfZnVuYyA9
+PSBOVUxMKSB7CgkJcnVuID0gbWF4X3J1bl9ub25ibG9jayhlbmdpbmUsIGFjdGlvbnMpOwoJfSBl
+bHNlIHsKCQlydW4gPSBtYXhfcnVuX25vbmJsb2NrX3dpdGhfY2IoZW5naW5lLCBhY3Rpb25zLCBj
+Yl9mdW5jLCBjYl9kYXRhKTsKCX0KCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1biBhY3Rp
+b25zIiwgTlVMTCk7CgltYXhfYWN0aW9uc19mcmVlKGFjdGlvbnMpOwoJcmV0dXJuIHJ1bjsKfQoK
+Ci8qKgogKiBcYnJpZWYgR3JvdXAgcnVuIGFkdmFuY2VkIHN0YXRpYyBmdW5jdGlvbiBmb3IgdGhl
+IGludGVyZmFjZSAnZGVmYXVsdCcuCiAqIAogKiBccGFyYW0gW2luXSBncm91cCBHcm91cCB0byB1
+c2UuCiAqIFxwYXJhbSBbaW4sb3V0XSBpbnRlcmZhY2VfYWN0aW9ucyBBY3Rpb25zIHRvIHJ1bi4K
+ICoKICogUnVuIHRoZSBhY3Rpb25zIG9uIHRoZSBmaXJzdCBkZXZpY2UgYXZhaWxhYmxlIGluIHRo
+ZSBncm91cC4KICovCnZvaWQgR2F1c3NpYW5CbHVyREZFX3J1bl9ncm91cChtYXhfZ3JvdXBfdCAq
+Z3JvdXAsIEdhdXNzaWFuQmx1ckRGRV9hY3Rpb25zX3QgKmludGVyZmFjZV9hY3Rpb25zKQp7Cglt
+YXhfcnVuX3QgKnJ1biA9IEdhdXNzaWFuQmx1ckRGRV9ydW5fZ3JvdXBfbm9uYmxvY2soZ3JvdXAs
+IGludGVyZmFjZV9hY3Rpb25zKTsKCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1biBhY3Rp
+b25zIiwgKTsKCW1heF93YWl0KHJ1bik7Cn0KCgovKioKICogXGJyaWVmIEdyb3VwIHJ1biBhZHZh
+bmNlZCBzdGF0aWMgbm9uLWJsb2NraW5nIGZ1bmN0aW9uIGZvciB0aGUgaW50ZXJmYWNlICdkZWZh
+dWx0Jy4KICogCiAqCiAqIFNjaGVkdWxlIHRoZSBhY3Rpb25zIHRvIHJ1biBvbiB0aGUgZmlyc3Qg
+ZGV2aWNlIGF2YWlsYWJsZSBpbiB0aGUgZ3JvdXAgYW5kIHJldHVybiBpbW1lZGlhdGVseS4KICog
+VGhlIHN0YXR1cyBvZiB0aGUgcnVuIG11c3QgYmUgY2hlY2tlZCB3aXRoIDo6bWF4X3dhaXQuIAog
+KiBOb3RlIHRoYXQgdXNlIG9mIDo6bWF4X25vd2FpdCBpcyBwcm9oaWJpdGVkIHdpdGggbm9uLWJs
+b2NraW5nIHJ1bm5pbmcgb24gZ3JvdXBzOgogKiBzZWUgdGhlIDo6bWF4X3J1bl9ncm91cF9ub25i
+bG9jayBkb2N1bWVudGF0aW9uIGZvciBtb3JlIGV4cGxhbmF0aW9uLgogKgogKiBccGFyYW0gW2lu
+XSBncm91cCBHcm91cCB0byB1c2UuCiAqIFxwYXJhbSBbaW5dIGludGVyZmFjZV9hY3Rpb25zIEFj
+dGlvbnMgdG8gcnVuLgogKiBccmV0dXJuIEEgaGFuZGxlIG9uIHRoZSBleGVjdXRpb24gc3RhdHVz
+IG9mIHRoZSBhY3Rpb25zLCBvciBOVUxMIGluIGNhc2Ugb2YgZXJyb3IuCiAqLwptYXhfcnVuX3Qg
+KkdhdXNzaWFuQmx1ckRGRV9ydW5fZ3JvdXBfbm9uYmxvY2sobWF4X2dyb3VwX3QgKmdyb3VwLCBH
+YXVzc2lhbkJsdXJERkVfYWN0aW9uc190ICppbnRlcmZhY2VfYWN0aW9ucykKewoJbWF4X2ZpbGVf
+dCAqbWF4ZmlsZSA9IG1heF9ncm91cF9nZXRfbWF4X2ZpbGUoZ3JvdXApOwoJbWF4X2FjdGlvbnNf
+dCAqYWN0aW9ucyA9IEdhdXNzaWFuQmx1ckRGRV9jb252ZXJ0X2ludGVybmFsKG1heGZpbGUsIGlu
+dGVyZmFjZV9hY3Rpb25zLCAxLCBOVUxMLCBOVUxMKTsKCWlmKGFjdGlvbnMgPT0gTlVMTCkgcmV0
+dXJuIE5VTEw7CglpZighbWF4X29rKGFjdGlvbnMtPmVycm9ycykpIHJldHVybiBOVUxMOwoJbWF4
+X3ZhbGlkYXRlKGFjdGlvbnMpOwoJbWF4X3J1bl90ICpydW4gPSBtYXhfcnVuX2dyb3VwX25vbmJs
+b2NrKGdyb3VwLCBhY3Rpb25zKTsKCW1heF9hY3Rpb25zX2ZyZWUoYWN0aW9ucyk7CglyZXR1cm4g
+cnVuOwp9CgoKLyoqCiAqIFxicmllZiBBcnJheSBydW4gYWR2YW5jZWQgc3RhdGljIGZ1bmN0aW9u
+IGZvciB0aGUgaW50ZXJmYWNlICdkZWZhdWx0Jy4KICogCiAqIFxwYXJhbSBbaW5dIGVuZ2FycmF5
+IFRoZSBhcnJheSBvZiBkZXZpY2VzIHRvIHVzZS4KICogXHBhcmFtIFtpbixvdXRdIGludGVyZmFj
+ZV9hY3Rpb25zIFRoZSBhcnJheSBvZiBhY3Rpb25zIHRvIHJ1bi4KICoKICogUnVuIHRoZSBhcnJh
+eSBvZiBhY3Rpb25zIG9uIHRoZSBhcnJheSBvZiBlbmdpbmVzLiAgVGhlIGxlbmd0aCBvZiBpbnRl
+cmZhY2VfYWN0aW9ucwogKiBtdXN0IG1hdGNoIHRoZSBzaXplIG9mIGVuZ2FycmF5LgogKi8Kdm9p
+ZCBHYXVzc2lhbkJsdXJERkVfcnVuX2FycmF5KG1heF9lbmdhcnJheV90ICplbmdhcnJheSwgR2F1
+c3NpYW5CbHVyREZFX2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlvbnNbXSkKewoJbWF4X3J1bl90
+ICpydW4gPSBHYXVzc2lhbkJsdXJERkVfcnVuX2FycmF5X25vbmJsb2NrKGVuZ2FycmF5LCBpbnRl
+cmZhY2VfYWN0aW9ucyk7CglDSEVDS19OVUxMKHJ1biwgIlVuYWJsZSB0byBydW4gYWN0aW9ucyIs
+ICk7CgltYXhfd2FpdChydW4pOwp9CgoKLyoqCiAqIFxicmllZiBBcnJheSBydW4gYWR2YW5jZWQg
+c3RhdGljIG5vbi1ibG9ja2luZyBmdW5jdGlvbiBmb3IgdGhlIGludGVyZmFjZSAnZGVmYXVsdCcu
+CiAqIAogKgogKiBTY2hlZHVsZSB0byBydW4gdGhlIGFycmF5IG9mIGFjdGlvbnMgb24gdGhlIGFy
+cmF5IG9mIGVuZ2luZXMsIGFuZCByZXR1cm4gaW1tZWRpYXRlbHkuCiAqIFRoZSBsZW5ndGggb2Yg
+aW50ZXJmYWNlX2FjdGlvbnMgbXVzdCBtYXRjaCB0aGUgc2l6ZSBvZiBlbmdhcnJheS4KICogVGhl
+IHN0YXR1cyBvZiB0aGUgcnVuIGNhbiBiZSBjaGVja2VkIGVpdGhlciBieSA6Om1heF93YWl0IG9y
+IDo6bWF4X25vd2FpdDsKICogbm90ZSB0aGF0IG9uZSBvZiB0aGVzZSAqbXVzdCogYmUgY2FsbGVk
+LCBzbyB0aGF0IGFzc29jaWF0ZWQgbWVtb3J5IGNhbiBiZSByZWxlYXNlZC4KICoKICogXHBhcmFt
+IFtpbl0gZW5nYXJyYXkgVGhlIGFycmF5IG9mIGRldmljZXMgdG8gdXNlLgogKiBccGFyYW0gW2lu
+XSBpbnRlcmZhY2VfYWN0aW9ucyBUaGUgYXJyYXkgb2YgYWN0aW9ucyB0byBydW4uCiAqIFxyZXR1
+cm4gQSBoYW5kbGUgb24gdGhlIGV4ZWN1dGlvbiBzdGF0dXMgb2YgdGhlIGFjdGlvbnMsIG9yIE5V
+TEwgaW4gY2FzZSBvZiBlcnJvci4KICovCm1heF9ydW5fdCAqR2F1c3NpYW5CbHVyREZFX3J1bl9h
+cnJheV9ub25ibG9jayhtYXhfZW5nYXJyYXlfdCAqZW5nYXJyYXksIEdhdXNzaWFuQmx1ckRGRV9h
+Y3Rpb25zX3QgKmludGVyZmFjZV9hY3Rpb25zW10pCnsKCW1heF9maWxlX3QgKm1heGZpbGUgPSBt
+YXhfZW5nYXJyYXlfZ2V0X21heF9maWxlKGVuZ2FycmF5LCAwKTsKCWludCBpOwoJbWF4X2FjdGFy
+cmF5X3QgKmFjdGFycmF5ID0gbWF4X2FjdGFycmF5X2luaXQobWF4ZmlsZSwgZW5nYXJyYXktPnNp
+emUpOwoJaWYgKGFjdGFycmF5ID09IE5VTEwpIHJldHVybiBOVUxMOwoJbWF4X2FjdGlvbnNfdCAq
+KmFycl9hY3Rpb25zID0gbWFsbG9jKGVuZ2FycmF5LT5zaXplICogc2l6ZW9mKG1heF9hY3Rpb25z
+X3QqKSk7Cglmb3IgKCBpID0gMCA7IGkgPCBhY3RhcnJheS0+c2l6ZTsgaSsrICkgewoJCW1heF9h
+Y3Rpb25zX3QgKmFjdGlvbnMgPSBHYXVzc2lhbkJsdXJERkVfY29udmVydF9pbnRlcm5hbChtYXhm
+aWxlLCBpbnRlcmZhY2VfYWN0aW9uc1tpXSwgMSwgTlVMTCwgTlVMTCk7CgkJaWYgKGFjdGlvbnMg
+PT0gTlVMTCkgcmV0dXJuIE5VTEw7CgkJYXJyX2FjdGlvbnNbaV0gPSBhY3Rpb25zOwoJCW1heF9z
+ZXRfYWN0aW9uKGFjdGFycmF5LCBpLCBhY3Rpb25zKTsKCX0KCW1heF9ydW5fdCAqcnVuID0gbWF4
+X3J1bl9hcnJheV9ub25ibG9jayhlbmdhcnJheSwgYWN0YXJyYXkpOwoJZm9yICggaSA9IDAgOyBp
+IDwgYWN0YXJyYXktPnNpemUgOyBpKysgKSB7IG1heF9hY3Rpb25zX2ZyZWUoYXJyX2FjdGlvbnNb
+aV0pOyB9CgltYXhfYWN0YXJyYXlfZnJlZShhY3RhcnJheSk7CglmcmVlKGFycl9hY3Rpb25zKTsK
+CXJldHVybiBydW47Cn0KCgovKioKICogXGJyaWVmIENvbnZlcnRzIGEgc3RhdGljLWludGVyZmFj
+ZSBhY3Rpb24gc3RydWN0IGludG8gYSBkeW5hbWljLWludGVyZmFjZSBtYXhfYWN0aW9uc190IHN0
+cnVjdC4KICoKICogTm90ZSB0aGF0IHRoaXMgaXMgYW4gaW50ZXJuYWwgdXRpbGl0eSBmdW5jdGlv
+biB1c2VkIGJ5IG90aGVyIGZ1bmN0aW9ucyBpbiB0aGUgc3RhdGljIGludGVyZmFjZS4KICoKICog
+XHBhcmFtIFtpbl0gbWF4ZmlsZSBUaGUgbWF4ZmlsZSB0byB1c2UuCiAqIFxwYXJhbSBbaW5dIGlu
+dGVyZmFjZV9hY3Rpb25zIFRoZSBpbnRlcmZhY2Utc3BlY2lmaWMgYWN0aW9ucyB0byBydW4uCiAq
+IFxyZXR1cm4gVGhlIGR5bmFtaWMtaW50ZXJmYWNlIGFjdGlvbnMgdG8gcnVuLCBvciBOVUxMIGlu
+IGNhc2Ugb2YgZXJyb3IuCiAqLwptYXhfYWN0aW9uc190KiBHYXVzc2lhbkJsdXJERkVfY29udmVy
+dChtYXhfZmlsZV90ICptYXhmaWxlLCBHYXVzc2lhbkJsdXJERkVfYWN0aW9uc190ICppbnRlcmZh
+Y2VfYWN0aW9ucykKewoJcmV0dXJuIEdhdXNzaWFuQmx1ckRGRV9jb252ZXJ0X2ludGVybmFsKG1h
+eGZpbGUsIGludGVyZmFjZV9hY3Rpb25zLCAwLCBOVUxMLCBOVUxMKTsKfQoKI3VuZGVmIENIRUNL
+X0VSUk9SU19TVAojdW5kZWYgQ0hFQ0tfTlVMTAoKCg==
+#endif /* SLIC_B64_DEFINITIONS */
+
+#ifdef SLIC_EXTRA_FILES
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHVz
+ZXJmaWxlcyBmb3JtYXQtdmVyc2lvbj0iMjAxMjAyMDAiLz4=
+#endif /* SLIC_EXTRA_FILES */
+
+#ifdef PHOTON_NODE_ADD_DATA
+#define PHOTON_NODE_ADD_DATA_PRESENT 1
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 271, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 272, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 0, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 1, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 2, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 379, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 25, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 378, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 3, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 292, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 26, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 27, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 293, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 83, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 32, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 288, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 34, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 294, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 295, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 296, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 116, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 377, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 38, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 39, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 40, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 297, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 121, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 135, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 391, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 392, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 45, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 298, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 46, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 47, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 299, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 300, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 301, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 154, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 393, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 394, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 395, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 302, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 303, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 304, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 173, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 57, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 58, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 305, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 306, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 307, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 192, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 63, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 376, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 309, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 64, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 65, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 310, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 197, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 211, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 290, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 71, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 311, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 312, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 313, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 230, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 375, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 75, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 76, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 77, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 314, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 235, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 249, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 315, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 316, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 317, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 260, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 388, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 318, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 86, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 374, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 88, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 319, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 105, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 373, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 107, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 320, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 321, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 117, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 322, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 124, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 372, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 126, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 136, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 323, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 143, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 371, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 145, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 324, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 325, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 155, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 326, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 162, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 370, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 164, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 327, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 328, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 174, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 329, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 181, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 369, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 183, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 330, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 331, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 193, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 332, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 200, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 368, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 202, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 212, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 333, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 219, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 367, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 221, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 334, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 335, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 231, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 336, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 238, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 366, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 240, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 250, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 337, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 338, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 365, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 262, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 263, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 339, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 266, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 364, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 90, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 363, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 109, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 340, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 341, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 118, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 362, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 128, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 137, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 361, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 147, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 342, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 343, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 156, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 360, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 166, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 344, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 345, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 175, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 359, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 185, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 346, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 347, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 194, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 358, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 204, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 213, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 357, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 223, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 348, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 349, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 232, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 356, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 242, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 251, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 350, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 351, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 355, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 268, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 390, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 269, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 274, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 279, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 354, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 276, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 277, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 278, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 280, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 353, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 282, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 283, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 285, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 352, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 284, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(GaussianBlurDFEKernel, 4, "SquashFactor", 0.0)
+#endif
+
+#ifdef MAXFILE_SIGNATURE
+#define MAXFILE_SIGNATURE_PRESENT 1
+MAXFILE_SIGNATURE("302c0214194388ac52b9e7fc27ac3bcff5b7a90f3ec64a17021451300adc8b77f5cc99d55c65bbe30b7cc2d071a4")
+#endif
+

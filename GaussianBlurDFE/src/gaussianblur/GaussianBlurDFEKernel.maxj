@@ -1,0 +1,88 @@
+package gaussianblur;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+
+public class GaussianBlurDFEKernel extends Kernel {
+
+	public GaussianBlurDFEKernel(final KernelParameters parameters, int nxMax) {
+		super(parameters);	
+
+
+		//	int height = 256, width = 256;
+
+			DFEVar inImage = io.input("x", dfeInt(32));
+			//DFEVar height = io.scalarInput("h", dfeInt(32));
+			DFEVar width = io.scalarInput("w", dfeInt(32));
+			DFEVar filterSize = io.scalarInput("size", dfeInt(32));
+			//io.sca
+			//int w= width;
+			DFEVar R = inImage >> 16;
+			DFEVar G = (inImage >> 8 ) & 0xFF;
+			DFEVar B = inImage & 0xFF;
+			
+			R -= 1;
+			G -= 1;
+			B -= 1;
+			
+			DFEVar window[][] = new DFEVar[3][3]; // x, y
+	  	
+		for (int x = -1; x <= 1; x++) {
+				for (int y = -1; y <= 1; y++) {
+				
+					int maxOffset = y * 3 + x;
+					window[x + 1][y + 1]= stream.offset(inImage, y * width + x,
+							Math.min(0, maxOffset), Math.max(0, maxOffset));
+				}
+			}
+			DFEVar windowR[][] = new DFEVar[3][3];
+			DFEVar windowG[][] = new DFEVar[3][3];
+			DFEVar windowB[][] = new DFEVar[3][3];
+			
+			
+			DFEVar result_R=constant.var(dfeInt(32),0);
+			DFEVar result_G=constant.var(dfeInt(32),0);
+			DFEVar result_B=constant.var(dfeInt(32),0);
+			
+			int gaussMat[][]= {{1, 2, 1},{2, 4, 2}, {1, 2, 1}};   
+
+			for(int i=0; i<3; i++)
+				for(int j=0; j<3; j++)
+				{	
+					windowR[i][j] = window[i][j] >> 16;
+					windowG[i][j] = (window[i][j] >> 8 ) & 0xFF;
+					windowB[i][j] = window[i][j] & 0xFF;
+					
+					windowR[i][j] = windowR[i][j] * gaussMat[i][j];
+					windowG[i][j] = windowG[i][j] * gaussMat[i][j]; 
+					windowB[i][j] = windowB[i][j] * gaussMat[i][j];
+					
+					result_R+=windowR[i][j];
+					result_G+=windowG[i][j];
+					result_B+=windowB[i][j];
+					
+				}
+			result_R/=16;
+			result_G/=16;
+			result_B/=16;
+			/*result_R/=273;
+			result_G/=273;
+			result_B/=273;*/
+				
+				
+			result_R = (result_R << 8 ) | (result_G & 0xFF);
+			result_R = (result_R << 8 ) | (result_B & 0xFF);
+
+			io.output("y", result_R, dfeInt(32));
+			//io.output("y", inImage, dfeInt(32));
+		
+		
+		// Input
+		//final DFEVar x = io.input("x", dfeUInt(32));
+
+		// Output
+		//io.output("y", x, dfeUInt(32));
+	}
+
+}

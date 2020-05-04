@@ -1,0 +1,85 @@
+*** After kernel graph-pass 'Init Graph' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+node "-" (ID 16) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:25)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+node "-" (ID 18) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:26)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+node "-" (ID 20) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:27)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'Init Graph' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'FoldConstantsPass' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'OptimiseNodesPass' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'OptimiseNodesPass' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'RemoveUntypedConstants' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'ScheduleApplier' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	
+*** After kernel graph-pass 'TapFIFOsPass' ***
+node "Scalar input (size)" (ID 4) has unconnected outputs: [size]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+	gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+	gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+	gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+	

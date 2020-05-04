@@ -1,0 +1,2357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Graph version="2019.2" pxg_version="2" maxfile_name="GaussianBlurDFE" design_name="GaussianBlurDFEKernel" compilation_phase="final-simulation" frequency="100.00">
+	<Node criticalPaths="[]" group="[]" id="271" isControl="true" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeInputMappedReg">
+		<Output latency="0" name="io_y_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_y_force_disabled)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>io_y_force_disabled</Name>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="272" dst_node_input="a" src_node_id="271" src_node_output="io_y_force_disabled" />
+	<Node criticalPaths="[]" group="[]" id="272" isControl="true" isVisible="false" pipelineFactor="0.0" powerUsage="N/A" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="274" dst_node_input="output_control" src_node_id="272" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="0" isControl="true" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeInputMappedReg">
+		<Output latency="0" name="io_x_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_x_force_disabled)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:15)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>io_x_force_disabled</Name>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="1" dst_node_input="a" src_node_id="0" src_node_output="io_x_force_disabled" />
+	<Node criticalPaths="[]" group="[]" id="1" isControl="true" isVisible="false" pipelineFactor="0.0" powerUsage="N/A" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:15)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="2" dst_node_input="enable" src_node_id="1" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="2" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeInput">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="5" name="data" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Input(x)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:15)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>x</Name>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="40" dst_node_input="input" src_node_id="2" src_node_output="data" />
+	<Edge criticalPaths="[]" dst_node_id="379" dst_node_input="input" src_node_id="2" src_node_output="data" />
+	<Node criticalPaths="[]" group="[]" id="379" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="25" dst_node_input="input" src_node_id="379" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="32" dst_node_input="input" src_node_id="379" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="391" dst_node_input="input" src_node_id="379" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="25" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="27" dst_node_input="input" src_node_id="25" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="378" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>11111111111111111111111111111111</Value>
+		<HexValue>0xffffffff</HexValue>
+		<NumericValue>-1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="292" dst_node_input="a" src_node_id="378" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="3" isControl="true" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeInputMappedReg">
+		<Output latency="0" name="w" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Scalar input (w)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:17)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>w</Name>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="292" dst_node_input="b" src_node_id="3" src_node_output="w" />
+	<Edge criticalPaths="[]" dst_node_id="38" dst_node_input="a" src_node_id="3" src_node_output="w" />
+	<Edge criticalPaths="[]" dst_node_id="298" dst_node_input="a" src_node_id="3" src_node_output="w" />
+	<Edge criticalPaths="[]" dst_node_id="57" dst_node_input="input" src_node_id="3" src_node_output="w" />
+	<Edge criticalPaths="[]" dst_node_id="309" dst_node_input="b" src_node_id="3" src_node_output="w" />
+	<Edge criticalPaths="[]" dst_node_id="75" dst_node_input="a" src_node_id="3" src_node_output="w" />
+	<Node criticalPaths="[]" group="[]" id="292" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSub">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>-</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="26" dst_node_input="input" src_node_id="292" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="26" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="27" dst_node_input="offset" src_node_id="26" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="27" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="7" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-4, 0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>-4</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="90" dst_node_input="a" src_node_id="27" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="293" dst_node_input="datain" src_node_id="27" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="318" dst_node_input="datain" src_node_id="27" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="293" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="83" dst_node_input="input" src_node_id="293" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="83" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="116" dst_node_input="a" src_node_id="83" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="32" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="34" dst_node_input="input" src_node_id="32" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="288" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>11111111111111111111111111111111</Value>
+		<HexValue>0xffffffff</HexValue>
+		<NumericValue>-1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="34" dst_node_input="offset" src_node_id="288" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="34" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-1, 0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>-1</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="109" dst_node_input="a" src_node_id="34" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="294" dst_node_input="datain" src_node_id="34" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="319" dst_node_input="datain" src_node_id="34" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="294" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="295" dst_node_input="input" src_node_id="294" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="295" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="296" dst_node_input="i" src_node_id="295" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="296" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="116" dst_node_input="b" src_node_id="296" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="116" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="135" dst_node_input="a" src_node_id="116" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="377" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>11111111111111111111111111111111</Value>
+		<HexValue>0xffffffff</HexValue>
+		<NumericValue>-1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="38" dst_node_input="b" src_node_id="377" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="38" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="39" dst_node_input="input" src_node_id="38" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="39" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-2" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -2</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="40" dst_node_input="offset" src_node_id="39" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="40" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 2]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>2</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="128" dst_node_input="a" src_node_id="40" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="297" dst_node_input="datain" src_node_id="40" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="322" dst_node_input="datain" src_node_id="40" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="297" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="121" dst_node_input="input" src_node_id="297" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="121" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="135" dst_node_input="b" src_node_id="121" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="135" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="154" dst_node_input="a" src_node_id="135" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="391" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="58" dst_node_input="input" src_node_id="391" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="392" dst_node_input="input" src_node_id="391" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="392" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="45" dst_node_input="input" src_node_id="392" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="393" dst_node_input="input" src_node_id="392" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="45" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-3" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -3</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="47" dst_node_input="input" src_node_id="45" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="298" isControl="true" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeNeg">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>(-)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="46" dst_node_input="input" src_node_id="298" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="46" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-3" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -3</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="47" dst_node_input="offset" src_node_id="46" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="47" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="6" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-3, 0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>-3</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="147" dst_node_input="a" src_node_id="47" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="299" dst_node_input="datain" src_node_id="47" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="323" dst_node_input="datain" src_node_id="47" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="299" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="300" dst_node_input="input" src_node_id="299" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="300" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="301" dst_node_input="i" src_node_id="300" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="301" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="154" dst_node_input="b" src_node_id="301" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="154" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="173" dst_node_input="a" src_node_id="154" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="393" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="77" dst_node_input="input" src_node_id="393" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="394" dst_node_input="input" src_node_id="393" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="394" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(2)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="63" dst_node_input="input" src_node_id="394" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="71" dst_node_input="input" src_node_id="394" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="395" dst_node_input="input" src_node_id="394" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="395" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="302" dst_node_input="datain" src_node_id="395" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="326" dst_node_input="datain" src_node_id="395" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="166" dst_node_input="a" src_node_id="395" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="302" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="303" dst_node_input="input" src_node_id="302" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="303" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 2, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 2, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="304" dst_node_input="i" src_node_id="303" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="304" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 2, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="173" dst_node_input="b" src_node_id="304" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="173" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="192" dst_node_input="a" src_node_id="173" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="57" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-3" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -3</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="58" dst_node_input="offset" src_node_id="57" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="58" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="6" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 3]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>3</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="185" dst_node_input="a" src_node_id="58" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="305" dst_node_input="datain" src_node_id="58" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="329" dst_node_input="datain" src_node_id="58" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="305" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="306" dst_node_input="input" src_node_id="305" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="306" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="307" dst_node_input="i" src_node_id="306" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="307" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="192" dst_node_input="b" src_node_id="307" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="192" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="211" dst_node_input="a" src_node_id="192" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="63" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-2" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -2</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="65" dst_node_input="input" src_node_id="63" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="376" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="309" dst_node_input="a" src_node_id="376" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="309" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSub">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>-</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="64" dst_node_input="input" src_node_id="309" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="64" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-2" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -2</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="65" dst_node_input="offset" src_node_id="64" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="65" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [-2, 0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>-2</MinOffset>
+		<MaxOffset>0</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="204" dst_node_input="a" src_node_id="65" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="310" dst_node_input="datain" src_node_id="65" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="332" dst_node_input="datain" src_node_id="65" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="310" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="197" dst_node_input="input" src_node_id="310" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="197" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="211" dst_node_input="b" src_node_id="197" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="211" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="230" dst_node_input="a" src_node_id="211" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="290" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="71" dst_node_input="offset" src_node_id="290" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="71" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 1]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>1</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="223" dst_node_input="a" src_node_id="71" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="311" dst_node_input="datain" src_node_id="71" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="333" dst_node_input="datain" src_node_id="71" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="311" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="312" dst_node_input="input" src_node_id="311" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="312" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="313" dst_node_input="i" src_node_id="312" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="313" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="230" dst_node_input="b" src_node_id="313" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="230" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="249" dst_node_input="a" src_node_id="230" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="375" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="75" dst_node_input="b" src_node_id="375" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="75" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="76" dst_node_input="input" src_node_id="75" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="76" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="-4" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>stream offset: -4</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="77" dst_node_input="offset" src_node_id="76" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="77" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeDynamicStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="offset" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="7" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>dynamic offset: [0, 4]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<MinOffset>0</MinOffset>
+		<MaxOffset>4</MaxOffset>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="242" dst_node_input="a" src_node_id="77" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="314" dst_node_input="datain" src_node_id="77" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="336" dst_node_input="datain" src_node_id="77" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="314" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 16</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>16</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="235" dst_node_input="input" src_node_id="314" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="235" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="249" dst_node_input="b" src_node_id="235" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="249" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="315" dst_node_input="input" src_node_id="249" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="315" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, -4, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, -4, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:66)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="316" dst_node_input="i" src_node_id="315" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="316" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, -4, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:66)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="317" dst_node_input="datain" src_node_id="316" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="317" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="260" dst_node_input="input" src_node_id="317" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="260" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="388" dst_node_input="input" src_node_id="260" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="388" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(2)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="263" dst_node_input="a" src_node_id="388" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="318" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="86" dst_node_input="input" src_node_id="318" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="86" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="88" dst_node_input="a" src_node_id="86" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="374" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="88" dst_node_input="b" src_node_id="374" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="88" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="117" dst_node_input="a" src_node_id="88" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="319" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="105" dst_node_input="input" src_node_id="319" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="105" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="107" dst_node_input="a" src_node_id="105" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="373" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="107" dst_node_input="b" src_node_id="373" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="107" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="320" dst_node_input="input" src_node_id="107" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="320" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="321" dst_node_input="i" src_node_id="320" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="321" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="117" dst_node_input="b" src_node_id="321" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="117" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="136" dst_node_input="a" src_node_id="117" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="322" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="124" dst_node_input="input" src_node_id="322" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="124" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="126" dst_node_input="a" src_node_id="124" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="372" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="126" dst_node_input="b" src_node_id="372" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="126" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="136" dst_node_input="b" src_node_id="126" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="136" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="155" dst_node_input="a" src_node_id="136" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="323" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="143" dst_node_input="input" src_node_id="323" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="143" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="145" dst_node_input="a" src_node_id="143" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="371" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="145" dst_node_input="b" src_node_id="371" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="145" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="324" dst_node_input="input" src_node_id="145" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="324" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="325" dst_node_input="i" src_node_id="324" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="325" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="155" dst_node_input="b" src_node_id="325" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="155" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="174" dst_node_input="a" src_node_id="155" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="326" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="162" dst_node_input="input" src_node_id="326" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="162" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="164" dst_node_input="a" src_node_id="162" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="370" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="164" dst_node_input="b" src_node_id="370" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="164" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="327" dst_node_input="input" src_node_id="164" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="327" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 2, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 2, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="328" dst_node_input="i" src_node_id="327" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="328" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 2, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="174" dst_node_input="b" src_node_id="328" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="174" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="193" dst_node_input="a" src_node_id="174" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="329" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="181" dst_node_input="input" src_node_id="329" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="181" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="183" dst_node_input="a" src_node_id="181" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="369" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="183" dst_node_input="b" src_node_id="369" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="183" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="330" dst_node_input="input" src_node_id="183" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="330" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="331" dst_node_input="i" src_node_id="330" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="331" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="193" dst_node_input="b" src_node_id="331" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="193" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="212" dst_node_input="a" src_node_id="193" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="332" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="200" dst_node_input="input" src_node_id="332" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="200" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="202" dst_node_input="a" src_node_id="200" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="368" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="202" dst_node_input="b" src_node_id="368" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="202" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="212" dst_node_input="b" src_node_id="202" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="212" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="231" dst_node_input="a" src_node_id="212" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="333" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="219" dst_node_input="input" src_node_id="333" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="219" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="221" dst_node_input="a" src_node_id="219" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="367" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="221" dst_node_input="b" src_node_id="367" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="221" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="334" dst_node_input="input" src_node_id="221" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="334" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="335" dst_node_input="i" src_node_id="334" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="335" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="231" dst_node_input="b" src_node_id="335" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="231" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="250" dst_node_input="a" src_node_id="231" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="336" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="238" dst_node_input="input" src_node_id="336" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="238" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="240" dst_node_input="a" src_node_id="238" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="366" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="240" dst_node_input="b" src_node_id="366" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="240" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="250" dst_node_input="b" src_node_id="240" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="250" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="337" dst_node_input="input" src_node_id="250" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="337" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, -4, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, -4, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:67)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="338" dst_node_input="i" src_node_id="337" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="338" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, -4, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:67)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="262" dst_node_input="a" src_node_id="338" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="365" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="262" dst_node_input="b" src_node_id="365" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="262" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="263" dst_node_input="b" src_node_id="262" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="263" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeOr">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>|</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="339" dst_node_input="datain" src_node_id="263" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="339" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 8</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>8</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="266" dst_node_input="input" src_node_id="339" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="266" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 0, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="269" dst_node_input="a" src_node_id="266" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="364" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="90" dst_node_input="b" src_node_id="364" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="90" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="118" dst_node_input="a" src_node_id="90" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="363" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="109" dst_node_input="b" src_node_id="363" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="109" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="340" dst_node_input="input" src_node_id="109" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="340" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="341" dst_node_input="i" src_node_id="340" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="341" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="118" dst_node_input="b" src_node_id="341" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="118" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="137" dst_node_input="a" src_node_id="118" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="362" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="128" dst_node_input="b" src_node_id="362" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="128" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="137" dst_node_input="b" src_node_id="128" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="137" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="156" dst_node_input="a" src_node_id="137" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="361" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="147" dst_node_input="b" src_node_id="361" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="147" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="342" dst_node_input="input" src_node_id="147" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="342" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="343" dst_node_input="i" src_node_id="342" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="343" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="156" dst_node_input="b" src_node_id="343" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="156" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="175" dst_node_input="a" src_node_id="156" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="360" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="166" dst_node_input="b" src_node_id="360" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="166" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="344" dst_node_input="input" src_node_id="166" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="344" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 2, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 2, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="345" dst_node_input="i" src_node_id="344" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="345" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 2, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="175" dst_node_input="b" src_node_id="345" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="175" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="194" dst_node_input="a" src_node_id="175" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="359" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="185" dst_node_input="b" src_node_id="359" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="185" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="346" dst_node_input="input" src_node_id="185" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="346" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="347" dst_node_input="i" src_node_id="346" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="347" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="194" dst_node_input="b" src_node_id="347" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="194" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="213" dst_node_input="a" src_node_id="194" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="358" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="204" dst_node_input="b" src_node_id="358" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="204" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="213" dst_node_input="b" src_node_id="204" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="213" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="232" dst_node_input="a" src_node_id="213" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="357" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="223" dst_node_input="b" src_node_id="357" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="223" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="348" dst_node_input="input" src_node_id="223" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="348" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, 1, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="349" dst_node_input="i" src_node_id="348" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="349" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 1, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="232" dst_node_input="b" src_node_id="349" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="232" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="251" dst_node_input="a" src_node_id="232" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="356" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="242" dst_node_input="b" src_node_id="356" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="242" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="251" dst_node_input="b" src_node_id="242" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="251" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>+</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="64" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="350" dst_node_input="input" src_node_id="251" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="350" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, -4, TWOSCOMPLEMENT)" />
+		<Text>&lt;{HWOffsetFix:32, -4, TWOSCOMPLEMENT}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:68)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="351" dst_node_input="i" src_node_id="350" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="351" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, -4, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="o" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:68)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="268" dst_node_input="a" src_node_id="351" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="355" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>00000000000000000000000011111111</Value>
+		<HexValue>0x000000ff</HexValue>
+		<NumericValue>255.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="268" dst_node_input="b" src_node_id="355" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="268" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="390" dst_node_input="input" src_node_id="268" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="390" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="269" dst_node_input="b" src_node_id="390" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="269" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeOr">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>|</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="274" dst_node_input="data" src_node_id="269" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="274" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Output(y)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>y</Name>
+	</Node>
+	<Node criticalPaths="[]" group="[]" id="279" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="280" dst_node_input="load" src_node_id="279" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="354" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="277" dst_node_input="enable" src_node_id="354" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="276" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="277" dst_node_input="max" src_node_id="276" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="277" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeCounter">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<ResourceUsage DSPs="0" FFs="48" FMems="0" LUTs="48" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="278" dst_node_input="input" src_node_id="277" src_node_output="count" />
+	<Node criticalPaths="[]" group="[]" id="278" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="280" dst_node_input="data" src_node_id="278" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="280" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar output (current_run_cycle_count)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>current_run_cycle_count</Name>
+	</Node>
+	<Node criticalPaths="[]" group="[]" id="353" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="283" dst_node_input="enable" src_node_id="353" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="282" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="283" dst_node_input="max" src_node_id="282" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="283" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeCounter">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<ResourceUsage DSPs="0" FFs="48" FMems="0" LUTs="48" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="352" dst_node_input="a" src_node_id="283" src_node_output="count" />
+	<Node criticalPaths="[]" group="[]" id="285" isControl="true" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeInputMappedReg">
+		<Output latency="0" name="run_cycle_count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar input (run_cycle_count)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>run_cycle_count</Name>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="352" dst_node_input="b" src_node_id="285" src_node_output="run_cycle_count" />
+	<Node criticalPaths="[]" group="[]" id="352" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeEqInlined">
+		<Input name="a" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<ResourceUsage DSPs="0" FFs="1" FMems="0" LUTs="2" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="284" dst_node_input="start" src_node_id="352" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="284" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeFlush">
+		<Input name="start" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>flush on trigger</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+	</Node>
+	<Node criticalPaths="[]" group="[]" id="4" isControl="true" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeInputMappedReg">
+		<Output latency="0" name="size" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Scalar input (size)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+gaussianblur.GaussianBlurDFEKernel.&lt;init&gt;(GaussianBlurDFEKernel.maxj:18)
+gaussianblur.GaussianBlurDFEManager.&lt;init&gt;(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)</OriginStackTrace>
+		<Name>size</Name>
+	</Node>
+</Graph>

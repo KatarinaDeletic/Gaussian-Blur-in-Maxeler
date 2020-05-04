@@ -1,0 +1,3886 @@
+NodeID     : 0
+Node       : Scalar input (io_x_force_disabled)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:15)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 1
+Node       : ~
+Node type  : NodeNot
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:15)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 2
+Node       : Input(x)
+Node type  : NodeInput
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:15)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 3
+Node       : Scalar input (w)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:17)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 4
+Node       : Scalar input (size)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1193)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:18)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 5
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:21)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 6
+Node       : >>
+Node type  : NodeShift
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:21)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 7
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:21)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 8
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:22)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 9
+Node       : >>
+Node type  : NodeShift
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:22)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 10
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:22)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 11
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:22)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 12
+Node       : &
+Node type  : NodeAnd
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:22)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 13
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:23)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 14
+Node       : &
+Node type  : NodeAnd
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:23)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 15
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:25)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 16
+Node       : -
+Node type  : NodeSub
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:25)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 17
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:26)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 18
+Node       : -
+Node type  : NodeSub
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:26)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 19
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:27)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 20
+Node       : -
+Node type  : NodeSub
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:990)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:27)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 21
+Node       : -1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 22
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NODE WAS REMOVED!
+  NodeID     : 291
+  Node       : (-)
+  Node type  : NodeNeg
+  Removed by : [OptimiseNodesPass]
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 23
+Node       : -1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 378
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NODE WAS REMOVED!
+NodeID     : 24
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 292
+  Node       : -
+  Node type  : NodeSub
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 25
+Node       : stream offset: -4
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 26
+Node       : stream offset: -4
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 27
+Node       : dynamic offset: [-4, 0]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 28
+Node       : 0.0
+Node type  : NodeConstantDouble
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 29
+Node       : *
+Node type  : NodeMul
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NODE WAS REMOVED!
+  NodeID     : 287
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0
+  Node type  : NodeConstantRawBits
+  Removed by : [FoldConstantsPass]
+  Creator    : FoldConstantsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 30
+Node       : -1.0
+Node type  : NodeConstantDouble
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 31
+Node       : +
+Node type  : NodeAdd
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 288
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0
+  Node type  : NodeConstantRawBits
+  Creator    : FoldConstantsPass
+
+------------
+NodeID     : 32
+Node       : stream offset: -1
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 33
+Node       : stream offset: -1
+Node type  : NodeStreamOffset
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 34
+Node       : dynamic offset: [-1, 0]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 35
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 36
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 37
+Node       : -1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 377
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0xffffffff; -1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 38
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 39
+Node       : stream offset: -2
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 40
+Node       : dynamic offset: [0, 2]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 41
+Node       : -1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 42
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 298
+  Node       : (-)
+  Node type  : NodeNeg
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 43
+Node       : 0.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 44
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 45
+Node       : stream offset: -3
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 46
+Node       : stream offset: -3
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 47
+Node       : dynamic offset: [-3, 0]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 48
+Node       : 0.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 49
+Node       : *
+Node type  : NodeMul
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 50
+Node       : 0.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 51
+Node       : +
+Node type  : NodeAdd
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 52
+Node       : stream offset: 0
+Node type  : NodeStreamOffset
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 53
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 54
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 55
+Node       : 0.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 56
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 57
+Node       : stream offset: -3
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 58
+Node       : dynamic offset: [0, 3]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 59
+Node       : -1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 60
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NODE WAS REMOVED!
+  NodeID     : 308
+  Node       : (-)
+  Node type  : NodeNeg
+  Removed by : [OptimiseNodesPass]
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 61
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 376
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NODE WAS REMOVED!
+NodeID     : 62
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 309
+  Node       : -
+  Node type  : NodeSub
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 63
+Node       : stream offset: -2
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 64
+Node       : stream offset: -2
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 65
+Node       : dynamic offset: [-2, 0]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 66
+Node       : 0.0
+Node type  : NodeConstantDouble
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 67
+Node       : *
+Node type  : NodeMul
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NODE WAS REMOVED!
+  NodeID     : 289
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0
+  Node type  : NodeConstantRawBits
+  Removed by : [FoldConstantsPass]
+  Creator    : FoldConstantsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 68
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 69
+Node       : +
+Node type  : NodeAdd
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 290
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : FoldConstantsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 70
+Node       : stream offset: -1
+Node type  : NodeStreamOffset
+Removed by : [FoldConstantsPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 71
+Node       : dynamic offset: [0, 1]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 72
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 73
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1055)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 74
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 375
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 75
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:945)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 76
+Node       : stream offset: -4
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 77
+Node       : dynamic offset: [0, 4]
+Node type  : NodeDynamicStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:514)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:35)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 78
+Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0
+Node type  : NodeConstantRawBits
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:90)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:44)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 79
+Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0
+Node type  : NodeConstantRawBits
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:90)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:45)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 80
+Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0
+Node type  : NodeConstantRawBits
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:90)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:46)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 81
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 82
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 293
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 83
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 84
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 85
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 318
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 86
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 87
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 374
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 88
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 89
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 364
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 90
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 91
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 92
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 93
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 94
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 95
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 96
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 97
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 98
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 99
+Node       : +
+Node type  : NodeAdd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 100
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 101
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 294
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 102
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 103
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 104
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 319
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 105
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 106
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 373
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 107
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 108
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 363
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 109
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 110
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 111
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 295
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 296
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 112
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 113
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 320
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 321
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 114
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 115
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 340
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 341
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 116
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 117
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 118
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 119
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 120
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 297
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 121
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 122
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 123
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 322
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 124
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 125
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 372
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 126
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 127
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 362
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 128
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 129
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 130
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 131
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 132
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 133
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 134
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 135
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 136
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 137
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 138
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 139
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 299
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 140
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 141
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 142
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 323
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 143
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 144
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 371
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 145
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 146
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 361
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 147
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 148
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 149
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 300
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 301
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 150
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 151
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 324
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 325
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 152
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 153
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 342
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 343
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 154
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 155
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 156
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 157
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 158
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 302
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 159
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 160
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 161
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 326
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 162
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 163
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 370
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 164
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 165
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 360
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 166
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 167
+Node       : 4.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 168
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 303
+  Node       : <{HWOffsetFix:32, 2, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 304
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 169
+Node       : 4.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 170
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 327
+  Node       : <{HWOffsetFix:32, 2, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 328
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 171
+Node       : 4.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 172
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 344
+  Node       : <{HWOffsetFix:32, 2, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 345
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 173
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 174
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 175
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 176
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 177
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 305
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 178
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 179
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 180
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 329
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 181
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 182
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 369
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 183
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 184
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 359
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 185
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 186
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 187
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 306
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 307
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 188
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 189
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 330
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 331
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 190
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 191
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 346
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 347
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 192
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 193
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 194
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 195
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 196
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 310
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 197
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 198
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 199
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 332
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 200
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 201
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 368
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 202
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 203
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 358
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 204
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 205
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 206
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 207
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 208
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 209
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 210
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 211
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 212
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 213
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 214
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 215
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 311
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 216
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 217
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 218
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 333
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 219
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 220
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 367
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 221
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 222
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 357
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 223
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 224
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 225
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 312
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 313
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 226
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 227
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 334
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 335
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 228
+Node       : 2.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 229
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 348
+  Node       : <{HWOffsetFix:32, 1, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 349
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 230
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 231
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 232
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 233
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 234
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 314
+  Node       : >> 16
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 235
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:53)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 236
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 237
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 336
+  Node       : >> 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 238
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:262)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 239
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 366
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 240
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:54)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 241
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 356
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 242
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:55)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 243
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 244
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:57)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 245
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 246
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:58)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 247
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 248
+Node       : *
+Node type  : NodeMul
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1035)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:59)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 249
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:61)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 250
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:62)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 251
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:63)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 252
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:66)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 253
+Node       : /
+Node type  : NodeDiv
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:66)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 315
+  Node       : <{HWOffsetFix:32, -4, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 316
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 254
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:67)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 255
+Node       : /
+Node type  : NodeDiv
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:67)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 337
+  Node       : <{HWOffsetFix:32, -4, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 338
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 256
+Node       : 16.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:68)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 257
+Node       : /
+Node type  : NodeDiv
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1080)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:68)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 350
+  Node       : <{HWOffsetFix:32, -4, TWOSCOMPLEMENT}>
+  Node type  : NodeReinterpret
+  Creator    : OptimiseNodesPass
+
+  NodeID     : 351
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}
+  Node type  : NodeCast
+  Creator    : OptimiseNodesPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 258
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 259
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 317
+  Node       : << 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 260
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 261
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 365
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 262
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 263
+Node       : |
+Node type  : NodeOr
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:74)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 264
+Node       : 8.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 265
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 339
+  Node       : << 8
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 266
+Node       : <{HWOffsetFix:32, 0, TWOSCOMPLEMENT}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftLeft(DFEVar.java:238)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 267
+Node       : 255.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 355
+  Node       : {HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x000000ff; 255.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 268
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:594)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 269
+Node       : |
+Node type  : NodeOr
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:75)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 270
+Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+Node type  : NodeConstantRawBits
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 271
+Node       : Scalar input (io_y_force_disabled)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 272
+Node       : ~
+Node type  : NodeNot
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 273
+Node       : &
+Node type  : NodeAnd
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 274
+Node       : Output(y)
+Node type  : NodeOutput
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+gaussianblur.GaussianBlurDFEKernel.<init>(GaussianBlurDFEKernel.maxj:77)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 275
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 354
+  Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 276
+Node       : {HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 277
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 278
+Node       : stream offset: 1
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 279
+Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 280
+Node       : Scalar output (current_run_cycle_count)
+Node type  : NodeOutputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 281
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 353
+  Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 282
+Node       : {HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 283
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 284
+Node       : flush on trigger
+Node type  : NodeFlush
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NodeID     : 285
+Node       : Scalar input (run_cycle_count)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+------------
+NODE WAS REMOVED!
+NodeID     : 286
+Node       : ==
+Node type  : NodeEq
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+gaussianblur.GaussianBlurDFEManager.<init>(GaussianBlurDFEManager.maxj:17)
+gaussianblur.GaussianBlurDFEManager.main(GaussianBlurDFEManager.maxj:28)
+Led to:
+  NodeID     : 352
+  Node       : ==
+  Node type  : NodeEqInlined
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 379
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NODE WAS REMOVED!
+NodeID     : 380
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+------------
+NODE WAS REMOVED!
+NodeID     : 381
+Node       : FIFO(3)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+Led to:
+  NodeID     : 392
+  Node       : FIFO(1)
+  Node type  : NodeFIFO
+  Creator    : TapFIFOsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 382
+Node       : FIFO(7)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+Led to:
+  NodeID     : 395
+  Node       : FIFO(1)
+  Node type  : NodeFIFO
+  Creator    : TapFIFOsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 383
+Node       : FIFO(2)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+Led to:
+  NodeID     : 391
+  Node       : FIFO(1)
+  Node type  : NodeFIFO
+  Creator    : TapFIFOsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 384
+Node       : FIFO(6)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+Led to:
+  NodeID     : 394
+  Node       : FIFO(2)
+  Node type  : NodeFIFO
+  Creator    : TapFIFOsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 385
+Node       : FIFO(6)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+------------
+NODE WAS REMOVED!
+NodeID     : 386
+Node       : FIFO(4)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+Led to:
+  NodeID     : 393
+  Node       : FIFO(1)
+  Node type  : NodeFIFO
+  Creator    : TapFIFOsPass
+
+------------
+NODE WAS REMOVED!
+NodeID     : 387
+Node       : FIFO(7)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+------------
+NodeID     : 388
+Node       : FIFO(2)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NODE WAS REMOVED!
+NodeID     : 389
+Node       : FIFO(7)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+------------
+NodeID     : 390
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------

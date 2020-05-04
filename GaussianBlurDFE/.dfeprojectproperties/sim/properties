@@ -1,0 +1,3 @@
+manager=gaussianblur.GaussianBlurDFEManager
+jvmargs=-Xmx2G
+parameters=DFEModel\=GALAVA target\=DFE_SIM maxFileName\=GaussianBlurDFE

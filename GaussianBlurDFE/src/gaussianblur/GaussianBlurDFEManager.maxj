@@ -1,0 +1,32 @@
+package gaussianblur;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.managers.custom.DFELink;
+import com.maxeler.maxcompiler.v2.managers.custom.blocks.KernelBlock;
+import com.maxeler.platform.max5.manager.MAX5CManager;
+
+public class GaussianBlurDFEManager extends MAX5CManager {
+
+	public static final String kernelName = "GaussianBlurDFEKernel";
+
+	public GaussianBlurDFEManager(EngineParameters params) {
+		super(params);
+		//dodato
+		int nxMax=8192;
+		//
+		final KernelBlock kernel = addKernel(new GaussianBlurDFEKernel(makeKernelParameters(kernelName), nxMax));
+		final DFELink x = addStreamFromCPU("x");
+		kernel.getInput("x") <== x;
+
+		final DFELink y = addStreamToCPU("y");
+		y <== kernel.getOutput("y");
+		addMaxFileConstant("nxMax", nxMax);
+	}
+
+	public static void main(final String[] argv) {
+		final EngineParameters params = new EngineParameters(argv);
+		final GaussianBlurDFEManager manager = new GaussianBlurDFEManager(params);
+		manager.build();
+	}
+
+}

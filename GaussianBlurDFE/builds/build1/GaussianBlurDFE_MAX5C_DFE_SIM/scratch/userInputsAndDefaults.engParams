@@ -1,0 +1,11 @@
+#user parameters:
+enableMPCX=false
+MPPRStartCT=1
+MPPREndCT=1
+MPPRThreads=1
+MPPRRetryThreshold=0
+
+#default parameters:
+DFEModel=GALAVA
+maxFileName=GaussianBlurDFE
+target=DFE_SIM
