@@ -4,7 +4,7 @@
 #include "Maxfiles.h"
 #include "ppmIO.h"
 
-// Input and output array size
+// Input and output array sizee
 #define SIZE 8
 
 int main(void) {
